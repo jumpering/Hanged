@@ -1,0 +1,19 @@
+@startuml
+Object ":Hanged" as Hanged
+Object ":Turn" as Turn
+Object ":Player" as Player
+Object ":BoardPaper" as BoardPaper
+Object ":SecretWord" as SecretWord
+Object ":ProposedWord" as ProposedWord
+
+
+
+Hanged *--> Turn
+Turn *--> Player
+note left: "puede haber varios objetos usuario"
+Player --> ProposedWord
+Hanged *--> BoardPaper
+BoardPaper *--> SecretWord
+BoardPaper o--> ProposedWord
+
+@enduml

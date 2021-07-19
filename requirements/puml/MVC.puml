@@ -1,0 +1,33 @@
+@startuml
+package "main" {
+class Hanged
+}
+
+package "views"{
+abstract class View
+    package "console" {
+        class StartView
+        class InGameView
+    }
+}
+
+package "controllers"{
+abstract class Controller
+class StartController
+class ProposeWordController
+}
+
+
+package "models" {
+
+}
+Hanged *--> View
+Hanged *--> Controller
+View <|-- StartView
+View <|-- InGameView
+
+Controller <|-- StartController
+Controller <|-- ProposeWordController
+
+
+@enduml

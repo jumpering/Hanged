@@ -1,0 +1,14 @@
+@startuml
+Hanged *--> Turn
+Turn *--> "1..n" Player
+Hanged *--> BoardPaper
+Player --> "0..9" ProposedChar
+Player --> "0..1" ProposedWord
+BoardPaper *--> SecretWord
+BoardPaper o--> ProposedChar
+BoardPaper o--> ProposedWord
+BoardPaper ..> "0..10" HangedPart
+BoardPaper *--> Result
+Result <|-- Win
+Result <|-- Lose
+@enduml

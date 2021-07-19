@@ -1,0 +1,162 @@
+hanged
+
+Insert number of players (only numbers): y
+Invalid number
+Please insert number of players (only numbers): 1
+
+Turn player 1
++---------------------------+
+|			    |
+|			    |
+|			    |
+|			    |
+|			    |
+|			    |
+|			    |
+|			    |
+|			    |
++---------------------------+
+Secret: __ __ __ __ __ __ 
+
+Insert one character or word (only words): 1
+Invalid character or word
+Insert one character or word (only words): a
+Character not found
+
++---------------------------+
+|			    |
+|			    |
+|			    |
+|			    |
+|			    |
+|			    |
+|   +-------------------+   |
+|   |                   |   |
+|   +-------------------+   |
++---------------------------+
+Secret: __ __ __ __ __ __
+
+Insert one character or word (only words): i
+Character not found
+
++---------------------------+
+|			    |
+|     + 		    |
+|     |			    |
+|     |			    |
+|     |			    |
+|     |			    |
+|     |			    |
+|   +-------------------+   |
+|   |                   |   |
+|   +-------------------+   |
++---------------------------+
+Secret: __ __ __ __ __ __
+
+Insert one character or word (only words): m
+Character found!
+
++---------------------------+
+|			    |
+|     + 		    |
+|     |			    |
+|     |			    |
+|     |			    |
+|     |			    |
+|     |			    |
+|   +-------------------+   |
+|   |                   |   |
+|   +-------------------+   |
++---------------------------+
+Secret: __ __ M M __ __
+
+
+Insert one character or word (only words): F
+Character not found!
+
++---------------------------+
+|			    |
+|     +---------+ 	    |
+|     |			    |
+|     |			    |
+|     |			    |
+|     |			    |
+|     |			    |
+|   +-------------------+   |
+|   |                   |   |
+|   +-------------------+   |
++---------------------------+
+Secret: __ __ M M __ __
+
+.......
+.......
+.......
+
+Insert one character or word (only words): E
+Character found!
+
++---------------------------+
+|			    |
+|     +---------+ 	    |
+|     |		|	    |
+|     |		O	    |
+|     |	       /|\	    |
+|     |	       /	    |
+|     |			    |
+|   +-------------------+   |
+|   |                   |   |
+|   +-------------------+   |
++---------------------------+
+Secret: D U M M I E
+
+Player 1 win!
+¿play again? (y/n):
+
+.......
+..or...
+.......
+
+Insert one character or word (only words): DUMMIE
+Word found!
+
++---------------------------+
+|			    |
+|     +---------+ 	    |
+|     |			    |
+|     |			    |
+|     |			    |
+|     |			    |
+|     |			    |
+|   +-------------------+   |
+|   |                   |   |
+|   +-------------------+   |
++---------------------------+
+Secret: D U M M I E
+
+Player 1 win!
+¿play again? (y/n):
+
+.......
+..or...
+.......
+
+Insert one character or word (only words): S
+Character not found
+
++---------------------------+
+|			    |
+|     +---------+ 	    |
+|     |		|	    |
+|     |		O	    |
+|     |	       /|\	    |
+|     |	       / \	    |
+|     |			    |
+|   +-------------------+   |
+|   |                   |   |
+|   +-------------------+   |
++---------------------------+
+secret: D U M M I __
+
+Secret reveal: DUMMIE
+Player 1 lose!
+¿play again? (y/n): n

@@ -1,0 +1,41 @@
+@startuml
+class Hanged{
++ run() : void
+}
+class Turn{
+- players[] : Player
++ next() : void
++getCurrent() : Player
+}
+class BoardPaper{
+ - secretWord : SecretWord
+ - proposedChar : ProposedWord
+ - proposedWord : ProposedChar
+ - hangedParts[] : int
+ + getAttempts() : int
+ +isWinner() : boolean
+}
+class SecretWord{
+}
+abstract class Word{
+- chars[] : char
++ {static} isValid(String input) : boolean
++ {abstract} isEquals() : boolean
++  {abstract} clearShow() : String
+}
+class Player{
+- name : String
++ play()
+}
+Word <|-- SecretWord
+Word <|--ProposedChar
+Word <|-- ProposedWord
+Hanged *--> Turn
+Turn *--> "1..n" Player
+Hanged *--> BoardPaper
+Player --> "0..9" ProposedChar
+Player --> "0..1" ProposedWord
+BoardPaper *--> SecretWord
+BoardPaper o--> ProposedChar
+BoardPaper o--> ProposedWord
+@enduml
