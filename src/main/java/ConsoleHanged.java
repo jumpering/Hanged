@@ -1,3 +1,6 @@
+import views.ConsoleView;
+import views.View;
+
 public class ConsoleHanged extends Hanged{
     
     @Override

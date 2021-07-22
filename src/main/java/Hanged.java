@@ -1,9 +1,13 @@
+import controllers.Controller;
+import controllers.Logic;
+import views.View;
+
 public abstract class Hanged {
 
     private Logic logic;
     private View view;
 
-    public void Hanged(){
+    protected Hanged(){
         this.logic = new Logic();
         this.view = this.createView();
     }
@@ -15,7 +19,7 @@ public abstract class Hanged {
         do {
             controller = this.logic.getController();
             if (controller != null){
-                this.view.interact(controller);
+                this.view.acceptController(controller);
             }
         } while (controller != null);
     }

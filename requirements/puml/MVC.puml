@@ -12,22 +12,43 @@ abstract class View
 }
 
 package "controllers"{
+class Logic
+enum SesionValue
 abstract class Controller
 class StartController
-class ProposeWordController
+class ProposedWordController
+class ProposedCharController
+class EndController
+
+
 }
 
 
 package "models" {
-
+abstract class Word
+class ProposedChar
+class ProposedWord
+class SecretWord
+class HangedPart
+class Turn
+class Player
 }
 Hanged *--> View
-Hanged *--> Controller
+Hanged *--> Logic
+Logic o--> Controller
 View <|-- StartView
 View <|-- InGameView
 
 Controller <|-- StartController
-Controller <|-- ProposeWordController
+Controller <|-- ProposedWordController
+Controller <|-- ProposedCharController
+Controller <|-- EndController
+
+Logic o--> SesionValue
+Word <|-- ProposedChar
+Word <|-- ProposedWord
+Word <|-- SecretWord
+
 
 
 @enduml
