@@ -1,28 +1,26 @@
 package views;
 
-import controllers.MessageView;
-import controllers.ProposedController;
+import controllers.ProposeController;
 import controllers.StartController;
 
 public class ConsoleView extends View{
 
     private StartView startView;
-    private ProposedCharView proposedCharView;
+    private ProposeView proposeView;
 
 
     public ConsoleView(){
         this.startView = new StartView();
-        this.proposedCharView = new ProposedCharView();
+        this.proposeView = new ProposeView();
     }
 
     @Override
     public void visit(StartController startController) {
-        this.startView.show();
-
+        this.startView.interact(startController);
     }
 
     @Override
-    public void visit(ProposedController proposedController) {
+    public void visit(ProposeController proposeController) {
 
     }
 }

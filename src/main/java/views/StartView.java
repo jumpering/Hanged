@@ -1,11 +1,15 @@
 package views;
 
-import controllers.MessageView;
+import types.MessageView;
+import controllers.StartController;
+import utils.Console;
 
 public class StartView {
 
-    public void show(){
-        System.out.println(MessageView.TITLE.getMessage());
-
+    public void interact(StartController startController){
+        Console console;
+        console = new Console();
+        console.writeln(MessageView.TITLE.getMessage());
+        startController.interact();
     }
 }

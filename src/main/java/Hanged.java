@@ -1,5 +1,5 @@
 import controllers.Controller;
-import controllers.Logic;
+import models.Logic;
 import views.View;
 
 public abstract class Hanged {

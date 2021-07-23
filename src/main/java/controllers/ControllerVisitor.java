@@ -4,5 +4,7 @@ public interface ControllerVisitor {
 
     public void visit(StartController startController);
 
-    public void visit(ProposedController proposedController);
+    public void visit(ProposeController proposeController);
+
+    //public void visit(ResumeController resumeController);
 }

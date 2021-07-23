@@ -1,8 +1,8 @@
-package controllers;
+package models;
 
 public enum StateValue {
     START,
     USER_PROPOSE,
-    FINAL,
+    RESUME,
     EXIT;
 }
