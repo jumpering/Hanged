@@ -1,17 +1,18 @@
 package controllers;
 
+import models.Game;
 import types.MessageView;
 import utils.Console;
-import models.Turn;
 
 public class ProposeController extends Controller{
 
-    public ProposeController(Turn turn){
-        super(turn);
+    public ProposeController(Game game){
+        super(game);
     }
 
     @Override
     public void accept(ControllerVisitor controllerVisitor) {
+        controllerVisitor.visit(this);
     }
 
     public void interact(){
@@ -19,5 +20,9 @@ public class ProposeController extends Controller{
         String userPropose;
         userPropose = console.readString(MessageView.PROPOSE.getMessage());
 
+    }
+
+    public String getCurrentUser(){
+        return null;
     }
 }

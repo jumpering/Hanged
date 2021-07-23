@@ -6,6 +6,7 @@ public enum MessageView {
     NUMBER_OF_PLAYER("Player number "),
     ASK_FOR_NAME_OF_PLAYER("insert name: "),
     SECRET_TITLE("Secret: "),
+    SECRET_STRIPES("__ "),
     PROPOSE("Insert proposed char or word (only characters): "),
     ERROR_PROPOSE("Only characters permited");
 

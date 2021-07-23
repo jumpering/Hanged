@@ -21,6 +21,6 @@ public class ConsoleView extends View{
 
     @Override
     public void visit(ProposeController proposeController) {
-
+        this.proposeView.interact(proposeController);
     }
 }

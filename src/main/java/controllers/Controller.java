@@ -1,13 +1,13 @@
 package controllers;
 
-import models.Turn;
+import models.Game;
 
 public abstract class Controller {
 
-    protected Turn turn;
+    protected Game game;
 
-    public Controller(Turn turn){
-        this.turn = turn;
+    public Controller(Game game){
+        this.game = game;
     }
 
     public abstract void accept (ControllerVisitor controllerVisitor);

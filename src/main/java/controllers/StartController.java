@@ -1,13 +1,13 @@
 package controllers;
 
+import models.Game;
 import types.MessageView;
 import utils.Console;
-import models.Turn;
 
 public class StartController extends Controller{
 
-    public StartController(Turn turn){
-        super(turn);
+    public StartController(Game game){
+        super(game);
     }
 
     @Override
@@ -16,13 +16,13 @@ public class StartController extends Controller{
     }
 
     public void interact(){
+        //todo assert que no hay un 0 (cero)
         Console console = new Console();
-        this.turn.setNumberOfPlayers(console.readInt(MessageView.ASK_FOR_NUMBER_OF_PLAYER.getMessage()));
-        for (int i = 0; i < this.turn.getNumberOfPlayers(); i++){
+        this.game.setNumberOfPlayers(console.readInt(MessageView.ASK_FOR_NUMBER_OF_PLAYER.getMessage()));
+        for (int i = 0; i < this.game.getNumberOfPlayers(); i++){
             console.write(MessageView.NUMBER_OF_PLAYER.getMessage() + "" + (i+1) + " ");
-            this.turn.setNameForPlayer(i,console.readString(MessageView.ASK_FOR_NAME_OF_PLAYER.getMessage()));
+            this.game.setNameForPlayer(i,console.readString(MessageView.ASK_FOR_NAME_OF_PLAYER.getMessage()));
         }
-        //next state! TODO
-
+        this.game.nextGameState();
     }
 }
