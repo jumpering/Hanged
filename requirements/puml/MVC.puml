@@ -7,47 +7,56 @@ package "views"{
 abstract class View
     package "console" {
         class StartView
-        class InGameView
+        class ProposeView
+        class ResumeView
     }
 }
 
 package "controllers"{
-class Logic
-enum SesionValue
 abstract class Controller
 class StartController
-class ProposedWordController
-class ProposedCharController
-class EndController
-
+class ProposeController
+class ResumeController
 
 }
 
 
 package "models" {
-abstract class Word
-class ProposedChar
-class ProposedWord
+class Logic
+class ProposeWord
 class SecretWord
-class HangedPart
+enum HangedPart
 class Turn
 class Player
+class Game
+class State
+enum StateValue
 }
+
+Logic *--> Game
+
 Hanged *--> View
 Hanged *--> Logic
+Hanged --> Controller
+
 Logic o--> Controller
 View <|-- StartView
-View <|-- InGameView
+View <|-- ProposeView
+View <|-- ResumeView
 
 Controller <|-- StartController
-Controller <|-- ProposedWordController
-Controller <|-- ProposedCharController
-Controller <|-- EndController
+Controller <|-- ProposeController
+Controller <|-- ResumeController
 
-Logic o--> SesionValue
-Word <|-- ProposedChar
-Word <|-- ProposedWord
-Word <|-- SecretWord
+Logic *--> Turn
+Logic o--> State
+State o--> StateValue
+
+Turn *--> Player
+Player --> ProposeWord
+Player --> HangedPart
+
+Game --> SecretWord
 
 
 

@@ -9,6 +9,7 @@ Object ":Player" as Player
 Object ":StartView" as StartView
 Object ":SecretWord" as SecretWord
 Object ":ProposedWord" as ProposedWord
+Object ":StateValue.START" as StateValue
 
 
 
@@ -20,6 +21,7 @@ Logic *--> Game
 Game *--> Turn
 Game *--> State
 Game *--> SecretWord
+State --> StateValue
 Turn *--> Player
 note left: "puede haber varios objetos usuario"
 Player --> ProposedWord
