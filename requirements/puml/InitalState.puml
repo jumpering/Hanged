@@ -1,19 +1,28 @@
 @startuml
 Object ":Hanged" as Hanged
 Object ":Turn" as Turn
+Object ":StartController" as StartController
+Object ":Logic" as Logic
+Object ":Game" as Game
+Object ":State" as State
 Object ":Player" as Player
-Object ":BoardPaper" as BoardPaper
+Object ":StartView" as StartView
 Object ":SecretWord" as SecretWord
 Object ":ProposedWord" as ProposedWord
 
 
 
-Hanged *--> Turn
+Hanged --> StartView
+Hanged --> StartController
+StartView ..> StartController
+StartController o--> Logic
+Logic *--> Game
+Game *--> Turn
+Game *--> State
+Game *--> SecretWord
 Turn *--> Player
 note left: "puede haber varios objetos usuario"
 Player --> ProposedWord
-Hanged *--> BoardPaper
-BoardPaper *--> SecretWord
-BoardPaper o--> ProposedWord
+Game o--> ProposedWord
 
 @enduml
