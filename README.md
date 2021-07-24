@@ -5,3 +5,5 @@ Rules and description on wikipedia: https://es.wikipedia.org/wiki/Ahorcado_(jueg
 ### Menu
 - [BrainStorming](/requirements/brainStorming/README.md)
 - [Requirements](/requirements/README.md)
+- [Main code](/src/main)
+- [Test code](/src/test)
