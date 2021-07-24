@@ -6,7 +6,6 @@ public class Game {
     private State state;
     private SecretWord secretWord;
 
-
     public Game(){
         this.turn = new Turn();
         this.state = new State();

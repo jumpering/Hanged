@@ -15,9 +15,5 @@ public class ProposeView {
         do{
             userCharOrWord = Console.getInstance().readString(MessageView.PROPOSE.getMessage());
         }while(!proposeController.isValidCharOrWord(userCharOrWord));
-        System.out.println(userCharOrWord);
-
-        //proposeController.getCharOrWord();
-        //proposeController.interact();
     }
 }

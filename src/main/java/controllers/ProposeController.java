@@ -2,8 +2,6 @@ package controllers;
 
 import models.Game;
 import types.MessageView;
-import utils.Console;
-
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -32,9 +30,10 @@ public class ProposeController extends Controller{
     }
 
     public boolean isValidCharOrWord(String userCharOrWord) {
-        String regex = "[a-zA-Z]";
+        String regex = "^[a-zA-ZñÑáéíóúÁÉÍÓÚÀÈÌÒÙàèìòù]{1,}";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(userCharOrWord);
+        //return matcher.matches() && userCharOrWord.matches("^\\S+$");//todo frases, no funciona
         return matcher.matches();
     }
 }

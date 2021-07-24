@@ -2,9 +2,9 @@ package controllers;
 
 import models.Game;
 
-public class StartController extends Controller{
+public class StartController extends Controller {
 
-    public StartController(Game game){
+    public StartController(Game game) {
         super(game);
     }
 
@@ -13,20 +13,20 @@ public class StartController extends Controller{
         controllerVisitor.visit(this);
     }
 
-    public void setNumberOfPlayers(int numberOfPlayers){
+    public void setNumberOfPlayers(int numberOfPlayers) {
         assert numberOfPlayers > 0;
         this.game.setNumberOfPlayers(numberOfPlayers);
     }
 
-    public int getNumberOfPlayers(){
+    public int getNumberOfPlayers() {
         return this.game.getNumberOfPlayers();
     }
 
-    public void setNameForPlayer(int numberOfPlayer, String nameOfPlayer){
-        this.game.setNameForPlayer(numberOfPlayer,nameOfPlayer);
+    public void setNameForPlayer(int numberOfPlayer, String nameOfPlayer) {
+        this.game.setNameForPlayer(numberOfPlayer, nameOfPlayer);
     }
 
-    public void nextGameState(){
+    public void nextGameState() {
         this.game.nextGameState();
     }
 
