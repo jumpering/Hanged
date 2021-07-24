@@ -22,7 +22,16 @@ public class ProposeController extends Controller{
 
     }
 
-    public String getCurrentUser(){
-        return null;
+    public String getCurrentNameUser(){
+        return this.game.getCurrentNameUser();
+    }
+
+
+    public String getStripes() {
+        String stripes = "";
+        for (int i = 0; i < this.game.getSecretWordLength(); i++){
+            stripes += MessageView.SECRET_STRIPES.getMessage();
+        }
+        return stripes;
     }
 }

@@ -20,4 +20,8 @@ public class Player {
     public void increaseHangedPartState(){
         this.hangedPartState++;
     }
+
+    public String getName(){
+        return this.name;
+    }
 }

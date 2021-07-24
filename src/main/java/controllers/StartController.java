@@ -1,8 +1,6 @@
 package controllers;
 
 import models.Game;
-import types.MessageView;
-import utils.Console;
 
 public class StartController extends Controller{
 
@@ -15,14 +13,22 @@ public class StartController extends Controller{
         controllerVisitor.visit(this);
     }
 
-    public void interact(){
-        //todo assert que no hay un 0 (cero)
-        Console console = new Console();
-        this.game.setNumberOfPlayers(console.readInt(MessageView.ASK_FOR_NUMBER_OF_PLAYER.getMessage()));
-        for (int i = 0; i < this.game.getNumberOfPlayers(); i++){
-            console.write(MessageView.NUMBER_OF_PLAYER.getMessage() + "" + (i+1) + " ");
-            this.game.setNameForPlayer(i,console.readString(MessageView.ASK_FOR_NAME_OF_PLAYER.getMessage()));
-        }
+    public void setNumberOfPlayers(int numberOfPlayers){
+        //todo assert numberOfPlayer > 0
+        this.game.setNumberOfPlayers(numberOfPlayers);
+    }
+
+    public int getNumberOfPlayers(){
+        return this.game.getNumberOfPlayers();
+    }
+
+    public void setNameForPlayer(int numberOfPlayer, String nameOfPlayer){
+        this.game.setNameForPlayer(numberOfPlayer,nameOfPlayer);
+    }
+
+    public void nextGameState(){
         this.game.nextGameState();
     }
+
+
 }
