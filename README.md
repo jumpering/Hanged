@@ -1,6 +1,6 @@
 ![headerImage](./requirements/brainStorming/hangman.jpg)
-# Juego del Ahorcado
-Reglas y descripción wikipedia: https://es.wikipedia.org/wiki/Ahorcado_(juego)
+# Hangman Game
+Rules and description on wikipedia: https://es.wikipedia.org/wiki/Ahorcado_(juego)
 
 ### Menu
 - [BrainStorming](/requirements/brainStorming/README.md)

@@ -1,11 +1,11 @@
 # Domain model
-![diagramModelDomain](./images/DomainModel.svg "Modelo del dominio")
+![ModelDomain](./images/DomainModel.svg "Modelo del dominio")
 
 # MVC (wip)
-![diagramMVC](./images/MVC.svg)
+![MVC](./images/MVC.svg)
 
-# Estado inicial
+# Initial State of Object Diagram (wip)
 ![initialState](./images/InitalState.svg)
 
 # GUI v1
-[caso de uso](userCase/casosDeUsoAhorcado.txt)
+[user case](userCase/casosDeUsoAhorcado.txt)
