@@ -18,17 +18,9 @@ public class ProposeController extends Controller{
         controllerVisitor.visit(this);
     }
 
-    public void interact(){
-        Console console = new Console();
-        String userPropose;
-        userPropose = console.readString(MessageView.PROPOSE.getMessage());
-
-    }
-
     public String getCurrentNameUser(){
         return this.game.getCurrentNameUser();
     }
-
 
     public String getStripes() {
         //todo ahora solo devuelve los blancos
@@ -43,8 +35,6 @@ public class ProposeController extends Controller{
         String regex = "[a-zA-Z]";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(userCharOrWord);
-        System.out.println(matcher.find());
-        System.out.println(matcher.matches());
         return matcher.matches();
     }
 }

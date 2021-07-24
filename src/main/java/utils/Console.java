@@ -5,7 +5,19 @@ import java.io.InputStreamReader;
 
 public class Console {
 
-	private BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+	private final BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+	private static Console console = null;
+
+	private Console(){
+		//private for avoid creation
+	}
+
+	public static Console getInstance(){
+		if (console == null){
+			console = new Console();
+		}
+		return console;
+	}
 
 	public String readString(String title) {
 		String input = null;

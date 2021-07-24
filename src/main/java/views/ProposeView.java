@@ -8,14 +8,12 @@ import utils.Console;
 public class ProposeView {
 
     public void interact(ProposeController proposeController){
-        Console console;
-        console = new Console();
-        console.writeln(MessageView.TURN_NAME.getMessage() + proposeController.getCurrentNameUser());
-        console.writeln(HangedParts.BOARD_PAPER.getHangedPart());
-        console.writeln(MessageView.SECRET_TITLE.getMessage() + proposeController.getStripes());
+        Console.getInstance().writeln(MessageView.TURN_NAME.getMessage() + proposeController.getCurrentNameUser());
+        Console.getInstance().writeln(HangedParts.BOARD_PAPER.getHangedPart());
+        Console.getInstance().writeln(MessageView.SECRET_TITLE.getMessage() + proposeController.getStripes());
         String userCharOrWord = "";
         do{
-            userCharOrWord = console.readString(MessageView.PROPOSE.getMessage());
+            userCharOrWord = Console.getInstance().readString(MessageView.PROPOSE.getMessage());
         }while(!proposeController.isValidCharOrWord(userCharOrWord));
         System.out.println(userCharOrWord);
 
