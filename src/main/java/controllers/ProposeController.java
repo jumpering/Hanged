@@ -4,6 +4,9 @@ import models.Game;
 import types.MessageView;
 import utils.Console;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class ProposeController extends Controller{
 
     public ProposeController(Game game){
@@ -36,8 +39,12 @@ public class ProposeController extends Controller{
         return stripes;
     }
 
-    public char[] getCharOrWord() {
-
-        return new char[6];
+    public boolean isValidCharOrWord(String userCharOrWord) {
+        String regex = "[a-zA-Z]";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(userCharOrWord);
+        System.out.println(matcher.find());
+        System.out.println(matcher.matches());
+        return matcher.matches();
     }
 }

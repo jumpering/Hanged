@@ -10,6 +10,7 @@ public class Turn {
     }
 
     public void setNumberOfPlayers(int numberOfPlayers){
+        assert numberOfPlayers > 0;
         this.players = new Player[numberOfPlayers];
         for (int i = 0; i < numberOfPlayers; i++){
             this.players[i] = new Player();
