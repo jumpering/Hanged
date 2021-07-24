@@ -28,10 +28,16 @@ public class ProposeController extends Controller{
 
 
     public String getStripes() {
+        //todo ahora solo devuelve los blancos
         String stripes = "";
         for (int i = 0; i < this.game.getSecretWordLength(); i++){
             stripes += MessageView.SECRET_STRIPES.getMessage();
         }
         return stripes;
+    }
+
+    public char[] getCharOrWord() {
+
+        return new char[6];
     }
 }

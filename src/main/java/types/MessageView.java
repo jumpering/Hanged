@@ -2,7 +2,7 @@ package types;
 
 public enum MessageView {
     TITLE("Hanged"),
-    ASK_FOR_NUMBER_OF_PLAYER("Insert number of players: "),
+    ASK_FOR_NUMBER_OF_PLAYER("Insert number of players (one at least): "),
     NUMBER_OF_PLAYER("Player number "),
     TURN_NAME("Turn of player "),
     ASK_FOR_NAME_OF_PLAYER("insert name: "),

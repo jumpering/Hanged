@@ -14,7 +14,7 @@ public class StartController extends Controller{
     }
 
     public void setNumberOfPlayers(int numberOfPlayers){
-        //todo assert numberOfPlayer > 0
+        assert numberOfPlayers > 0;
         this.game.setNumberOfPlayers(numberOfPlayers);
     }
 
