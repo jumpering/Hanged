@@ -7,5 +7,5 @@
 # Initial State of Object Diagram (wip)
 ![initialState](./images/InitalState.svg)
 
-# GUI v1
+# Console GUI v1 (user case)
 [user case](userCase/casosDeUsoAhorcado.txt)
