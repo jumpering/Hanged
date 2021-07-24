@@ -4,11 +4,13 @@ public class Game {
 
     private Turn turn;
     private State state;
+    private SecretWord secretWord;
 
 
     public Game(){
         this.turn = new Turn();
         this.state = new State();
+        this.secretWord = new SecretWord();
     }
 
     public void setNumberOfPlayers(int numberOfPlayers){
@@ -27,16 +29,15 @@ public class Game {
         this.state.next();
     }
 
-    public String printActualState(){
-        return this.state.getStateValue().toString();
-    }
-
-    public void resetGame(){
-        this.resetGame();
-    }
-
     public StateValue getStateValue(){
         return this.state.getStateValue();
     }
 
+    public String getCurrentNameUser(){
+        return this.turn.getCurrentUser();
+    }
+
+    public int getSecretWordLength(){
+        return this.secretWord.getLength();
+    }
 }

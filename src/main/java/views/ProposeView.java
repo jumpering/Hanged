@@ -10,9 +10,9 @@ public class ProposeView {
     public void interact(ProposeController proposeController){
         Console console;
         console = new Console();
-        //todo imprimir usuario actual
+        console.writeln(MessageView.TURN_NAME.getMessage() + proposeController.getCurrentNameUser());
         console.writeln(HangedParts.BOARD_PAPER.getHangedPart());
-        console.writeln(MessageView.SECRET_TITLE.getMessage());
+        console.writeln(MessageView.SECRET_TITLE.getMessage() + proposeController.getStripes());
         proposeController.interact();
     }
 }

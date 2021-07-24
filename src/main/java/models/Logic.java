@@ -10,7 +10,6 @@ import java.util.HashMap;
 public class Logic {
 
     private Game game;
-
     private Map<StateValue, Controller> controllers;
 
     public Logic(){
