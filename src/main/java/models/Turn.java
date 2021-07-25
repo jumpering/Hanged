@@ -3,10 +3,10 @@ package models;
 public class Turn {
 
     private Player[] players;
-    private int currentUser;
+    private int currentNumberOfPlayer;
 
     public Turn(){
-        this.currentUser = 0;
+        this.currentNumberOfPlayer = 0;
     }
 
     public void setNumberOfPlayers(int numberOfPlayers){
@@ -25,7 +25,11 @@ public class Turn {
         this.players[playerNumber].setName(playerName);
     }
 
-    public String getCurrentUser(){
-        return this.players[this.currentUser].getName();
+    public String getCurrentPlayerName(){
+        return this.players[this.currentNumberOfPlayer].getName();
+    }
+
+    public Player getCurrentPlayer(){
+        return this.players[this.currentNumberOfPlayer];
     }
 }

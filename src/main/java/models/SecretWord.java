@@ -1,7 +1,5 @@
 package models;
 
-import java.util.Objects;
-
 public class SecretWord {
 
     private String secret;
@@ -15,7 +13,11 @@ public class SecretWord {
         return secret.length();
     }
 
-    public char[] containCharacter (char proposedCharacter){
-        return new char[0];
+    public boolean containsWord(String userWord){
+        return userWord.equals(this.secret);
+    }
+
+    public boolean containsChar(String userChar){
+        return this.secret.contains(userChar);
     }
 }

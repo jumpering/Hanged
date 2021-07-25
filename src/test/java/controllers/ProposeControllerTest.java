@@ -31,7 +31,13 @@ public class ProposeControllerTest {
     }
 
     @Test
-    public void givenIsValidCharOrWordWhenInsertStringWithOutNumbersAndSimbolsThenGetTrue(){
+    public void givenIsValidCharOrWordWhenInsertStringWithSpacesThenGetFalse(){
+        String sample = "test test";
+        assertThat(this.proposeController.isValidCharOrWord(sample), is (false));
+    }
+
+    @Test
+    public void givenIsValidCharOrWordWhenInsertStringWithOutNumbersAndSimbolsAndSpacesThenGetTrue(){
         String sample = "tést";
         assertThat(this.proposeController.isValidCharOrWord(sample), is (true));
     }

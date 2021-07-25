@@ -32,11 +32,22 @@ public class Game {
         return this.state.getStateValue();
     }
 
-    public String getCurrentNameUser(){
-        return this.turn.getCurrentUser();
+    public String getCurrentPlayeName(){
+        return this.turn.getCurrentPlayerName();
+    }
+
+    public Player getCurrentPlayer(){
+        return this.turn.getCurrentPlayer();
     }
 
     public int getSecretWordLength(){
         return this.secretWord.getLength();
+    }
+
+    public boolean isCharOrWordPresentOnSecret(String userCharOrWord) {
+        if (userCharOrWord.length() == 1 && this.secretWord.containsChar(userCharOrWord)){
+            return true;
+        }
+        return userCharOrWord.length() > 1 && this.secretWord.containsWord(userCharOrWord);
     }
 }
