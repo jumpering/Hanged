@@ -1,12 +1,13 @@
 package models;
 
+import java.util.Random;
+
 public class SecretWord {
 
     private String secret;
 
     public SecretWord(){
-        //getFromFile todo getFilefromFile
-        this.secret = "hola";
+        getFromFileRandom();
     }
 
     public int getLength(){
@@ -17,7 +18,27 @@ public class SecretWord {
         return userWord.equals(this.secret);
     }
 
-    public boolean containsChar(String userChar){
-        return this.secret.contains(userChar);
+    public boolean containsChar(char userChar){
+        return this.secret.contains(Character.toString(userChar));
+    }
+
+    public boolean containsCharInPosition(int position, char userChar){
+        return this.secret.charAt(position) == userChar;
+    }
+
+    public void getFromFileRandom(){
+        //getFromFile todo getFilefromFile
+        Random random = new Random();
+        switch(random.nextInt(3)) {
+            case 0:
+                this.secret = "caracola";
+                break;
+            case 1:
+                this.secret = "hola";
+                break;
+            case 2:
+                this.secret = "onomatopeya";
+                break;
+        }
     }
 }

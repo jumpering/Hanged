@@ -1,35 +1,47 @@
 package models;
 
+import java.util.List;
+import java.util.ArrayList;
+
 public class Turn {
 
-    private Player[] players;
+    private List<Player> players;
     private int currentNumberOfPlayer;
 
     public Turn(){
         this.currentNumberOfPlayer = 0;
-    }
-
-    public void setNumberOfPlayers(int numberOfPlayers){
-        assert numberOfPlayers > 0;
-        this.players = new Player[numberOfPlayers];
-        for (int i = 0; i < numberOfPlayers; i++){
-            this.players[i] = new Player();
-        }
+        this.players = new ArrayList<>();
     }
 
     public int getNumberOfPlayers(){
-        return this.players.length;
+        return this.players.size();
     }
 
-    public void setNameForPlayer(int playerNumber, String playerName){
-        this.players[playerNumber].setName(playerName);
+    public void setNameForPlayer(String playerName){
+        this.players.add(new Player(playerName));
     }
 
     public String getCurrentPlayerName(){
-        return this.players[this.currentNumberOfPlayer].getName();
+        return this.players.get(this.currentNumberOfPlayer).getName();
     }
 
     public Player getCurrentPlayer(){
-        return this.players[this.currentNumberOfPlayer];
+        return this.players.get(this.currentNumberOfPlayer);
+    }
+
+    public void nextPlayer(){
+        if (this.currentNumberOfPlayer < this.players.size() - 1){
+            this.currentNumberOfPlayer++;
+        } else {
+            this.currentNumberOfPlayer = 0;
+        }
+    }
+
+    public int getCurrentNumberOfPlayer(){
+        return this.currentNumberOfPlayer;
+    }
+
+    public void removeCurrentPlayer() {
+        this.players.remove(this.currentNumberOfPlayer);
     }
 }

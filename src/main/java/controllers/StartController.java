@@ -13,22 +13,16 @@ public class StartController extends Controller {
         controllerVisitor.visit(this);
     }
 
-    public void setNumberOfPlayers(int numberOfPlayers) {
-        assert numberOfPlayers > 0;
-        this.game.setNumberOfPlayers(numberOfPlayers);
+    public void setNumberOfSecretWords(int numberOfSecretWords) {
+        assert numberOfSecretWords > 0;
+        this.game.setNumberOfSecretWords(numberOfSecretWords);
     }
 
-    public int getNumberOfPlayers() {
-        return this.game.getNumberOfPlayers();
-    }
-
-    public void setNameForPlayer(int numberOfPlayer, String nameOfPlayer) {
-        this.game.setNameForPlayer(numberOfPlayer, nameOfPlayer);
+    public void setNameForPlayer(String nameOfPlayer) {
+        this.game.setNameForPlayer(nameOfPlayer);
     }
 
     public void nextGameState() {
         this.game.nextGameState();
     }
-
-
 }

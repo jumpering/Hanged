@@ -1,16 +1,19 @@
 package models;
 
+import types.HangedParts;
+
 import java.util.HashSet;
 import java.util.Set;
 
 public class Player {
 
     private String name;
-    private int hangedPartState;
+    private HangedParts hangedPartState;
     private Set<Character> matchedChars;
 
-    public Player(){
-        this.hangedPartState = 0;
+    public Player(String name){
+        this.name = name;
+        this.hangedPartState = HangedParts.BOARD_PAPER;
         this.matchedChars = new HashSet<>();
     }
 
@@ -18,12 +21,12 @@ public class Player {
         this.name = name;
     }
 
-    public int getHangedPartState(){
+    public HangedParts getHangedPartState(){
         return this.hangedPartState;
     }
 
     public void increaseHangedPartState(){
-        this.hangedPartState++;
+        this.hangedPartState = HangedParts.values()[this.hangedPartState.ordinal()+1];
     }
 
     public String getName(){
@@ -32,5 +35,11 @@ public class Player {
 
     public void addMatchedChars(Character character){
         this.matchedChars.add(character);
+    }
+
+    public Character[] getMatchedChars(){
+        Character[] chars = new Character[this.matchedChars.size()];
+        this.matchedChars.toArray(chars);
+        return chars;
     }
 }
