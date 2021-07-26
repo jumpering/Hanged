@@ -46,6 +46,9 @@ public class ProposeController extends Controller {
     public void manageCharOrWordPresentOnSecretword(String userCharOrWord) { //todo
         if (userCharOrWord.length() > 1){
             if(this.game.isCharOrWordPresentOnSecret(userCharOrWord)){
+                for (int i = 0; i < userCharOrWord.length(); i++){
+                    this.game.getCurrentPlayer().addMatchedChars(userCharOrWord.charAt(i));
+                }
                 Console.getInstance().writeln(MessageView.PLAYER_WIN.getMessage() + this.getCurrentPlayerName()  + "!");
                 nextGameState();
             }else{
