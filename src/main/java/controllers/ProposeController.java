@@ -4,7 +4,6 @@ import models.Game;
 import types.HangedParts;
 import types.MessageView;
 import utils.Console;
-
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -43,7 +42,7 @@ public class ProposeController extends Controller {
         return matcher.matches();
     }
 
-    public void manageCharOrWordPresentOnSecretword(String userCharOrWord) { //todo
+    public void manageCharOrWordPresentOnSecretword(String userCharOrWord) {
         if (userCharOrWord.length() > 1){
             if(this.game.isCharOrWordPresentOnSecret(userCharOrWord)){
                 for (int i = 0; i < userCharOrWord.length(); i++){
@@ -62,18 +61,9 @@ public class ProposeController extends Controller {
             }else{
                 Console.getInstance().writeln(MessageView.FAIL_PROPOSED.getMessage());
                 this.game.getCurrentPlayer().increaseHangedPartState();
+               //todo falta si es el último turno y falla
             }
         }
-
-
-    }
-
-    public boolean isWordEqualSecret(String userCharOrWord){
-        return userCharOrWord.length() > 1 && this.game.isCharOrWordPresentOnSecret(userCharOrWord);
-    }
-
-    public boolean isCharEqualSecret(String userCharOrWord){
-        return userCharOrWord.length() == 1 && this.game.isCharOrWordPresentOnSecret(userCharOrWord);
     }
 
     public boolean isPlayerEnd(){

@@ -7,11 +7,13 @@ import utils.Console;
 public class StartView {
 
     private int numberOfPlayers;
+    private StartController startController;
 
     public void interact(StartController startController) {
+        this.startController = startController;
         Console.getInstance().writeln(MessageView.TITLE.getMessage());
         startController.setNumberOfSecretWords(getValidNumberOfSecretWords());
-        setNameForPlayers(startController);
+        setNameForPlayers();
         startController.nextGameState();
     }
 
@@ -24,10 +26,10 @@ public class StartView {
         return numberOfPlayers;
     }
 
-    private void setNameForPlayers(StartController startController) {
+    private void setNameForPlayers() {
         for (int i = 0; i < this.numberOfPlayers; i++) {
             Console.getInstance().write(MessageView.NUMBER_OF_PLAYER.getMessage() + "" + (i + 1) + " ");
-            startController.setNameForPlayer(Console.getInstance().readString(MessageView.ASK_FOR_NAME_OF_PLAYER.getMessage()));
+            this.startController.setNameForPlayer(Console.getInstance().readString(MessageView.ASK_FOR_NAME_OF_PLAYER.getMessage()));
         }
     }
 }
