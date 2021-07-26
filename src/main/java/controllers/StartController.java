@@ -22,7 +22,7 @@ public class StartController extends Controller {
         this.game.setNameForPlayer(nameOfPlayer);
     }
 
-    public void nextGameState() {
-        this.game.nextGameState();
-    }
+//    public void nextGameState() {
+//        this.game.nextGameState();
+//    }
 }

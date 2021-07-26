@@ -6,5 +6,5 @@ public interface ControllerVisitor {
 
     public void visit(ProposeController proposeController);
 
-    //public void visit(ResumeController resumeController);
+    public void visit(RestartController restartController);
 }

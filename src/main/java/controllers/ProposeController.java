@@ -44,24 +44,33 @@ public class ProposeController extends Controller {
     }
 
     public void manageCharOrWordPresentOnSecretword(String userCharOrWord) { //todo
-        if (userCharOrWord.length() > 1 && this.game.isCharOrWordPresentOnSecret(userCharOrWord)) {
-            //player X gana y termina juego
-
-        } else {
-            //player pierde directamente (lo colgamos) y sigue juego SI HAY MÁS DE UN PLAYER!
-
+        if (userCharOrWord.length() > 1){
+            if(this.game.isCharOrWordPresentOnSecret(userCharOrWord)){
+                Console.getInstance().writeln(MessageView.PLAYER_WIN.getMessage() + this.getCurrentPlayerName()  + "!");
+                nextGameState();
+            }else{
+                this.game.getCurrentPlayer().setHangedPartState(HangedParts.ROPE);
+            }
         }
-        if (userCharOrWord.length() == 1 && this.game.isCharOrWordPresentOnSecret(userCharOrWord)) {
-            this.game.getCurrentPlayer().addMatchedChars(userCharOrWord.charAt(0));
-            Console.getInstance().writeln(MessageView.FINE_PROPOSED.getMessage());
-        } else {
-            Console.getInstance().writeln(MessageView.FAIL_PROPOSED.getMessage());
-            this.game.getCurrentPlayer().increaseHangedPartState();
-//            if (this.game.getCurrentPlayer().getHangedPartState() == HangedParts.ROPE){
-//                //player pierde y sigue el juego si todavia quedan jugadores
-//                this.game.removeCurrentPlayer();
-//            }
+        if (userCharOrWord.length() == 1){
+            if(this.game.isCharOrWordPresentOnSecret(userCharOrWord)){
+                this.game.getCurrentPlayer().addMatchedChars(userCharOrWord.charAt(0));
+                Console.getInstance().writeln(MessageView.FINE_PROPOSED.getMessage());
+            }else{
+                Console.getInstance().writeln(MessageView.FAIL_PROPOSED.getMessage());
+                this.game.getCurrentPlayer().increaseHangedPartState();
+            }
         }
+
+
+    }
+
+    public boolean isWordEqualSecret(String userCharOrWord){
+        return userCharOrWord.length() > 1 && this.game.isCharOrWordPresentOnSecret(userCharOrWord);
+    }
+
+    public boolean isCharEqualSecret(String userCharOrWord){
+        return userCharOrWord.length() == 1 && this.game.isCharOrWordPresentOnSecret(userCharOrWord);
     }
 
     public boolean isPlayerEnd(){
@@ -71,15 +80,6 @@ public class ProposeController extends Controller {
     public void removeCurrentPlayer(){
         this.game.removeCurrentPlayer();
     }
-
-//    public boolean isCharOrWordPresentOnSecretword(String userCharOrWord) {
-//        if (userCharOrWord.length() > 1 && this.game.isCharOrWordPresentOnSecret(userCharOrWord)) {
-//            return true;
-//        }
-//        return userCharOrWord.length() == 1 && this.game.isCharOrWordPresentOnSecret(userCharOrWord);
-//    }
-
-
 
     public HangedParts getHangedPartStateFromCurrentPlayer(){
         return this.game.getCurrentPlayer().getHangedPartState();

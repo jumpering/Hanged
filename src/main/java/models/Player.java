@@ -25,6 +25,10 @@ public class Player {
         return this.hangedPartState;
     }
 
+    public void setHangedPartState(HangedParts hangedPartState){
+        this.hangedPartState = hangedPartState;
+    }
+
     public void increaseHangedPartState(){
         this.hangedPartState = HangedParts.values()[this.hangedPartState.ordinal()+1];
     }

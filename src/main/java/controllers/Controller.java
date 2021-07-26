@@ -11,4 +11,9 @@ public abstract class Controller {
     }
 
     public abstract void accept (ControllerVisitor controllerVisitor);
+
+    public void nextGameState() {
+        this.game.nextGameState();
+    }
+
 }

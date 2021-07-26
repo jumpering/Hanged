@@ -7,16 +7,11 @@ public class Game {
     private SecretWord[] secretWords;
 
     public Game(){
-        this.turn = new Turn();
-        this.state = new State();
+        restart();
     }
 
     public void setNameForPlayer(String playerName){
         this.turn.setNameForPlayer(playerName);
-    }
-
-    public int getNumberOfPlayers(){
-        return this.turn.getNumberOfPlayers();
     }
 
     public void nextGameState(){
@@ -63,5 +58,10 @@ public class Game {
 
     public void removeCurrentPlayer() {
         this.turn.removeCurrentPlayer();
+    }
+
+    public void restart(){
+        this.turn = new Turn();
+        this.state = new State();
     }
 }
