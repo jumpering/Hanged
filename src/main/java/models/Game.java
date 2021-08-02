@@ -4,7 +4,7 @@ public class Game {
 
     private Turn turn;
     private State state;
-    private SecretWord[] secretWords;
+    private Secret[] secrets;
 
     public Game(){
         restart();
@@ -31,18 +31,18 @@ public class Game {
     }
 
     public int getSecretWordLength(){
-        return this.secretWords[this.turn.getCurrentNumberOfPlayer()].getLength();
+        return this.secrets[this.turn.getCurrentNumberOfPlayer()].getLength();
     }
 
     public boolean isCharOrWordPresentOnSecret(String userCharOrWord) {
-        if (userCharOrWord.length() == 1 && this.secretWords[this.turn.getCurrentNumberOfPlayer()].containsChar(userCharOrWord.charAt(0))){
+        if (userCharOrWord.length() == 1 && this.secrets[this.turn.getCurrentNumberOfPlayer()].containsChar(userCharOrWord.charAt(0))){
             return true;
         }
-        return userCharOrWord.length() > 1 && this.secretWords[this.turn.getCurrentNumberOfPlayer()].containsWord(userCharOrWord);
+        return userCharOrWord.length() > 1 && this.secrets[this.turn.getCurrentNumberOfPlayer()].containsWord(userCharOrWord);
     }
 
     public boolean containsCharInPosition(int position, char userChar){
-        return this.secretWords[this.turn.getCurrentNumberOfPlayer()].containsCharInPosition(position, userChar);
+        return this.secrets[this.turn.getCurrentNumberOfPlayer()].containsCharInPosition(position, userChar);
     }
 
     public void nextPlayer(){
@@ -50,9 +50,9 @@ public class Game {
     }
 
     public void setNumberOfSecretWords(int numberOfPlayers) {
-        this.secretWords = new SecretWord[numberOfPlayers];
+        this.secrets = new Secret[numberOfPlayers];
         for (int i = 0; i < numberOfPlayers; i++){
-            this.secretWords[i] = new SecretWord();
+            this.secrets[i] = new Secret();
         }
     }
 
