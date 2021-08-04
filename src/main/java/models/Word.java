@@ -10,7 +10,7 @@ public class Word {
         this.word = getFromFileRandom();
     }
 
-    private String getFromFileRandom(){ //todo
+    public String getFromFileRandom(){ //todo
         Random random = new Random();
         switch(random.nextInt(3)) {
             case 0:

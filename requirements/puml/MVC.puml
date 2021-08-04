@@ -17,6 +17,7 @@ abstract class Controller
 class StartController
 class ProposeController
 class ResumeController
+class RestartController
 
 }
 
@@ -47,6 +48,8 @@ View <|-- ResumeView
 Controller <|-- StartController
 Controller <|-- ProposeController
 Controller <|-- ResumeController
+Controller <|-- RestartController
+
 
 Logic *--> Turn
 Logic o--> State

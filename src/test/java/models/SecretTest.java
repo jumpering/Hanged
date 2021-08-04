@@ -21,7 +21,7 @@ public class SecretTest {
 
     @Test
     public void givenContainCharWhenInputCharacterIsPresentThenReturnTrue() throws IOException {
-        String stringMocked = "seee";
+        String stringMocked = "se";
         when(this.word.getWord()).thenReturn(stringMocked);
         assertThat(this.secret.containsChar('s'), is(true));
     }

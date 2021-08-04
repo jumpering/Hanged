@@ -2,19 +2,19 @@ package models;
 
 public class Secret {
 
-    private Word word;
     private String secret;
+    private Word word;
 
     public Secret(){
         this.word = new Word();
-        this.secret = word.getWord();
+        this.secret = new Word().getWord();
     }
 
     public int getLength(){
         return secret.length();
     }
 
-    public boolean containsWord(String userWord){
+    public boolean equalWord(String userWord){
         return userWord.equals(this.secret);
     }
 

@@ -38,7 +38,7 @@ public class Game {
         if (userCharOrWord.length() == 1 && this.secrets[this.turn.getCurrentNumberOfPlayer()].containsChar(userCharOrWord.charAt(0))){
             return true;
         }
-        return userCharOrWord.length() > 1 && this.secrets[this.turn.getCurrentNumberOfPlayer()].containsWord(userCharOrWord);
+        return userCharOrWord.length() > 1 && this.secrets[this.turn.getCurrentNumberOfPlayer()].equalWord(userCharOrWord);
     }
 
     public boolean containsCharInPosition(int position, char userChar){
