@@ -52,7 +52,7 @@ public class Game {
     public void setNumberOfSecretWords(int numberOfPlayers) {
         this.secrets = new Secret[numberOfPlayers];
         for (int i = 0; i < numberOfPlayers; i++){
-            this.secrets[i] = new Secret();
+            this.secrets[i] = new Secret(new Word());
         }
     }
 

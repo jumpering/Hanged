@@ -3,11 +3,15 @@ package models;
 public class Secret {
 
     private String secret;
-    private Word word;
+    //private Word word;
 
-    public Secret(){
-        this.word = new Word();
-        this.secret = new Word().getWord();
+    public Secret(Word word){
+        //.word = new Word();
+        this.secret = word.getWord();
+    }
+
+    public String getSecret(){
+        return this.secret;
     }
 
     public int getLength(){
