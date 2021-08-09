@@ -42,7 +42,7 @@ public class ProposeController extends Controller {
         return matcher.matches();
     }
 
-    public void manageCharOrWordPresentOnSecretword(String userCharOrWord) {
+    public void compareCharOrWordWithSecret(String userCharOrWord) {
         if (userCharOrWord.length() > 1){
             if(this.game.isCharOrWordPresentOnSecret(userCharOrWord)){
                 for (int i = 0; i < userCharOrWord.length(); i++){
@@ -51,7 +51,7 @@ public class ProposeController extends Controller {
                 Console.getInstance().writeln(MessageView.PLAYER_WIN.getMessage() + this.getCurrentPlayerName()  + "!");
                 nextGameState();
             }else{
-                this.game.getCurrentPlayer().setHangedPartState(HangedParts.ROPE);
+                this.game.getCurrentPlayer().setHangedPartState(HangedParts.L_LEG);
             }
         }
         if (userCharOrWord.length() == 1){
@@ -67,7 +67,7 @@ public class ProposeController extends Controller {
     }
 
     public boolean isPlayerEnd(){
-        return this.game.getCurrentPlayer().getHangedPartState() == HangedParts.ROPE;
+        return this.game.getCurrentPlayer().getHangedPartState() == HangedParts.L_LEG;
     }
 
     public void removeCurrentPlayer(){

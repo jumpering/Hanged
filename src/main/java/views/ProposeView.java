@@ -11,7 +11,7 @@ public class ProposeView {
     public void interact(ProposeController proposeController){
         this.proposeController = proposeController;
         header();
-        proposeController.manageCharOrWordPresentOnSecretword(getUserCharOrWordString());
+        proposeController.compareCharOrWordWithSecret(getUserCharOrWordString());
         printResult();
         if (proposeController.isPlayerEnd()){
             Console.getInstance().writeln(MessageView.PLAYER_LOSE.getMessage() + proposeController.getCurrentPlayerName() + "!");

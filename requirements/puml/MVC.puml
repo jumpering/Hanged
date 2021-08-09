@@ -6,6 +6,7 @@ class Hanged
 package "views"{
 abstract class View
     package "console" {
+        class ConsoleView
         class StartView
         class ProposeView
         class ResumeView
@@ -24,8 +25,8 @@ interface ControllerVisitor
 
 package "models" {
 class Logic
-class ProposeWord
-class SecretWord
+class Secret
+class Word
 enum HangedPart
 class Turn
 class Player
@@ -40,10 +41,10 @@ Hanged *--> View
 Hanged *--> Logic
 Hanged --> Controller
 
-Logic o--> Controller
-View <|-- StartView
-View <|-- ProposeView
-View <|-- ResumeView
+View <|-- ConsoleView
+ConsoleView *--> StartView
+ConsoleView *--> ProposeView
+ConsoleView *--> ResumeView
 
 Controller <|-- StartController
 Controller <|-- ProposeController
@@ -55,10 +56,11 @@ Game o--> State
 State o--> StateValue
 
 Turn *--> Player
-Player --> ProposeWord
 Player --> HangedPart
 
-Game --> SecretWord
+Game --> Secret
+
+Secret --> Word
 
 
 
