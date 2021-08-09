@@ -1,0 +1,18 @@
+@startuml contexto
+state START
+state IN_GAME
+state RESTART
+state EXIT
+state if_finished <<choice>>
+state if_resumed <<choice>>
+
+[*] --> START
+START --> IN_GAME: selectNumOfPlayers
+IN_GAME --> if_finished: Propose
+if_finished --> IN_GAME: addHangedPart
+if_finished --> RESTART: [finished]
+RESTART --> if_resumed: AskForRestartGame
+if_resumed --> START: [yes]
+if_resumed --> EXIT: [no]
+EXIT --> [*]
+@enduml
