@@ -16,8 +16,8 @@ package "controllers"{
 abstract class Controller
 class StartController
 class ProposeController
-class ResumeController
 class RestartController
+interface ControllerVisitor
 
 }
 
@@ -47,12 +47,11 @@ View <|-- ResumeView
 
 Controller <|-- StartController
 Controller <|-- ProposeController
-Controller <|-- ResumeController
 Controller <|-- RestartController
 
 
 Logic *--> Turn
-Logic o--> State
+Game o--> State
 State o--> StateValue
 
 Turn *--> Player
