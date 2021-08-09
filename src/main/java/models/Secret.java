@@ -3,10 +3,8 @@ package models;
 public class Secret {
 
     private String secret;
-    //private Word word;
 
     public Secret(Word word){
-        //.word = new Word();
         this.secret = word.getWord();
     }
 
