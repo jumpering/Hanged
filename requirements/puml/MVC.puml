@@ -35,6 +35,19 @@ class State
 enum StateValue
 }
 
+
+package "utils"{
+class ConsoleView
+class YesNoDialog
+}
+
+
+package "types"{
+enum HangedParts
+enum MessageView
+}
+
+
 Logic *--> Game
 
 Hanged *--> View
