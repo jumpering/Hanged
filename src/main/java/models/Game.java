@@ -35,14 +35,14 @@ public class Game {
     }
 
     public boolean isCharOrWordPresentOnSecret(String userCharOrWord) {
-        if (userCharOrWord.length() == 1 && this.secrets[this.turn.getCurrentNumberOfPlayer()].containsChar(userCharOrWord.charAt(0))){
+        if (userCharOrWord.length() == 1 && this.secrets[this.turn.getCurrentNumberOfPlayer()].isEqualCharInAnyPosition(userCharOrWord.charAt(0))){
             return true;
         }
-        return userCharOrWord.length() > 1 && this.secrets[this.turn.getCurrentNumberOfPlayer()].equalWord(userCharOrWord);
+        return userCharOrWord.length() > 1 && this.secrets[this.turn.getCurrentNumberOfPlayer()].isEqualWord(userCharOrWord);
     }
 
     public boolean containsCharInPosition(int position, char userChar){
-        return this.secrets[this.turn.getCurrentNumberOfPlayer()].containsCharInPosition(position, userChar);
+        return this.secrets[this.turn.getCurrentNumberOfPlayer()].isEqualCharInConcretePosition(position, userChar);
     }
 
     public void nextPlayer(){

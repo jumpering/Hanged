@@ -1,5 +1,6 @@
 package models;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -16,14 +17,40 @@ public class SecretTest {
     @Mock
     Word word;
 
-    @InjectMocks
+    //@InjectMocks
     private Secret secret;
 
-    @Test
-    public void givenContainCharWhenInputCharacterIsPresentThenReturnTrue() throws IOException {
+    @BeforeEach
+    public void before(){
         String stringMocked = "secreta";
         when(this.word.getWord()).thenReturn(stringMocked);
-        Secret secret = new Secret(this.word); //todo ¿hace falta crear objeto con @InjectMocks?
-        assertThat(secret.containsChar('s'), is(true));
+        this.secret = new Secret(this.word); //todo ¿hace falta crear objeto con @InjectMocks?
     }
+
+    @Test
+    public void givenContainCharWhenInputCharacterIsPresentOnSecretThenReturnTrue() throws IOException {
+        assertThat(this.secret.isEqualCharInAnyPosition('s'), is(true));
+    }
+
+    @Test
+    public void givenIsEqualWordWhenInputIsSameWordThatSecretThenReturnTrue(){
+        assertThat(this.secret.isEqualWord("secreta"), is(true));
+   }
+
+    @Test
+    public void givenIsEqualWordWhenInputIsDiferentWordThatSecretThenReturnFalse(){
+        assertThat(this.secret.isEqualWord("secretilla"), is(false));
+    }
+
+    @Test
+    public void givenIsEqualCharInConcretePositionWhenInputIsEqualCharInSamePositionOnSecretThenReturnTrue(){
+        assertThat(this.secret.isEqualCharInConcretePosition(0,'s'), is(true));
+    }
+
+    @Test
+    public void givenIsEqualCharInConcretePositionWhenInputIsEqualCharInOutOfBoundPositionOnSecretThenReturnFalse(){
+        assertThat(this.secret.isEqualCharInConcretePosition(10,'s'), is(false));
+    }
+
+
 }

@@ -8,23 +8,22 @@ public class Secret {
         this.secret = word.getWord();
     }
 
-    public String getSecret(){
-        return this.secret;
-    }
-
     public int getLength(){
         return secret.length();
     }
 
-    public boolean equalWord(String userWord){
+    public boolean isEqualWord(String userWord){
         return userWord.equals(this.secret);
     }
 
-    public boolean containsChar(char userChar){
+    public boolean isEqualCharInAnyPosition(char userChar){
         return this.secret.contains(Character.toString(userChar));
     }
 
-    public boolean containsCharInPosition(int position, char userChar){
-        return this.secret.charAt(position) == userChar;
+    public boolean isEqualCharInConcretePosition(int position, char userChar){
+        if (position < this.secret.length()){
+            return this.secret.charAt(position) == userChar;
+        }
+       return false;
     }
 }

@@ -15,13 +15,10 @@ public class Word {
         switch(random.nextInt(3)) {
             case 0:
                 return "aabb";
-            //break;
             case 1:
                 return "ccdd";
-            //break;
             case 2:
                 return "eeff";
-            //break;
         }
         return "";
     }
