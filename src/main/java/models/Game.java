@@ -11,7 +11,7 @@ public class Game {
     }
 
     public void setNameForPlayer(String playerName){
-        this.turn.setNameForPlayer(playerName);
+        this.turn.addPlayer(playerName);
     }
 
     public void nextGameState(){
@@ -57,7 +57,10 @@ public class Game {
     }
 
     public void removeCurrentPlayer() {
-        this.turn.removeCurrentPlayer();
+        if (this.turn.getNumberOfPlayers() > 0){
+            this.turn.removeCurrentPlayer();
+        }
+
     }
 
     public void restart(){

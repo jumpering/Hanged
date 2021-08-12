@@ -17,7 +17,7 @@ public class Turn {
         return this.players.size();
     }
 
-    public void setNameForPlayer(String playerName){
+    public void addPlayer(String playerName){
         this.players.add(new Player(playerName));
     }
 

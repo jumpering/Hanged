@@ -16,20 +16,16 @@ public class TurnTest {
         this.turn = new Turn();
     }
 
-//    @Test
-//    public void givenNegativeNumberOfPlayersWhenSetNumberOfPlayersThenGetErrorNegativeArraySizeException(){
-//        assertThrows(NegativeArraySizeException.class, () -> this.turn.setNumberOfPlayers(-1));
-//    }
-//
-//    @Test
-//    public void givenZeroNumberWhenSetNumberOfPlayersThenGetError(){
-//        assertThrows(AssertionError.class, () -> this.turn.setNumberOfPlayers(0));
-//    }
-//
-//    @Test
-//    public void givenPositiveNumberWhenSetNumberOfPlayersThenGetSameNumberOfPlayers(){
-//        this.turn.setNumberOfPlayers(6);
-//        assertThat(this.turn.getNumberOfPlayers(), is(6));
-//    }
+    @Test
+    public void givenRemovePlayerWhenNoPlayersLeftThenGetError(){
+        assertThrows(IndexOutOfBoundsException.class, () -> this.turn.removeCurrentPlayer());
+    }
+
+    @Test
+    public void givenRemovePlayerWhenAddPlayersLeftToListCollectionThenRemovePlayerOk(){
+        this.turn.addPlayer("test");
+        this.turn.removeCurrentPlayer();
+        assertThat(this.turn.getCurrentNumberOfPlayer(), is(0));
+    }
 
 }
