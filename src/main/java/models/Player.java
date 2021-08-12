@@ -1,7 +1,6 @@
 package models;
 
 import types.HangedParts;
-
 import java.util.HashSet;
 import java.util.Set;
 
