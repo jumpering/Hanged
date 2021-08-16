@@ -34,11 +34,14 @@ public class Game {
         return this.secrets[this.turn.getCurrentNumberOfPlayer()].getLength();
     }
 
-    public boolean isCharOrWordPresentOnSecret(String userCharOrWord) {
-        if (userCharOrWord.length() == 1 && this.secrets[this.turn.getCurrentNumberOfPlayer()].isEqualCharInAnyPosition(userCharOrWord.charAt(0))){
-            return true;
-        }
-        return userCharOrWord.length() > 1 && this.secrets[this.turn.getCurrentNumberOfPlayer()].isEqualWord(userCharOrWord);
+
+    public boolean isCharOrWordPresentOnSecret(String userWord) {
+        return this.secrets[this.turn.getCurrentNumberOfPlayer()].isEqualWord(userWord);
+    }
+
+
+    public boolean isCharOrWordPresentOnSecret(char userChar) {
+        return this.secrets[this.turn.getCurrentNumberOfPlayer()].isEqualCharInAnyPosition(userChar);
     }
 
     public boolean containsCharInPosition(int position, char userChar){
@@ -60,11 +63,14 @@ public class Game {
         if (this.turn.getNumberOfPlayers() > 0){
             this.turn.removeCurrentPlayer();
         }
-
     }
 
     public void restart(){
         this.turn = new Turn();
         this.state = new State();
+    }
+
+    public int getNumberOfPlayers() {
+        return this.turn.getNumberOfPlayers();
     }
 }

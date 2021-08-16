@@ -1,6 +1,7 @@
 package controllers;
 
 import models.Game;
+import models.ReturnInputValue;
 import types.HangedParts;
 import types.MessageView;
 import utils.Console;
@@ -35,33 +36,39 @@ public class ProposeController extends Controller {
         return new String(stripes);
     }
 
-    public boolean isValidCharOrWord(String userCharOrWord) {
+    public boolean isValidCharacterOrString(String userCharOrWord) {
         String regex = "^[a-zA-ZñÑáéíóúÁÉÍÓÚÀÈÌÒÙàèìòù]{1,}";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(userCharOrWord);
         return matcher.matches();
     }
 
-    public void compareCharOrWordWithSecret(String userCharOrWord) {
-        if (userCharOrWord.length() > 1){
-            if(this.game.isCharOrWordPresentOnSecret(userCharOrWord)){
-                for (int i = 0; i < userCharOrWord.length(); i++){
-                    this.game.getCurrentPlayer().addMatchedChars(userCharOrWord.charAt(i));
+    public void compareCharOrStringWithSecret(ReturnInputValue getUserInput) {
+        if (getUserInput.isString()){
+            if(this.game.isCharOrWordPresentOnSecret(getUserInput.getString())){
+                for (int i = 0; i < getUserInput.getString().length(); i++){
+                    this.game.getCurrentPlayer().addMatchedChars(getUserInput.getString().charAt(i));
                 }
                 Console.getInstance().writeln(MessageView.PLAYER_WIN.getMessage() + this.getCurrentPlayerName()  + "!");
                 nextGameState();
             }else{
+                Console.getInstance().writeln(MessageView.FAIL_PROPOSED.getMessage());
                 this.game.getCurrentPlayer().setHangedPartState(HangedParts.L_LEG);
+                if (this.game.getNumberOfPlayers() == 0){
+                    nextGameState();
+                }
             }
         }
-        if (userCharOrWord.length() == 1){
-            if(this.game.isCharOrWordPresentOnSecret(userCharOrWord)){
-                this.game.getCurrentPlayer().addMatchedChars(userCharOrWord.charAt(0));
+        if (getUserInput.isCharacter()){
+            if(this.game.isCharOrWordPresentOnSecret(getUserInput.getCharacter())){
+                this.game.getCurrentPlayer().addMatchedChars(getUserInput.getCharacter());
                 Console.getInstance().writeln(MessageView.FINE_PROPOSED.getMessage());
             }else{
                 Console.getInstance().writeln(MessageView.FAIL_PROPOSED.getMessage());
                 this.game.getCurrentPlayer().increaseHangedPartState();
-               //todo falta si es el último turno y falla
+               if(this.game.getCurrentPlayer().getHangedPartState() == HangedParts.L_LEG && this.game.getNumberOfPlayers() == 0){
+                       nextGameState();
+               }
             }
         }
     }

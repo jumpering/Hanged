@@ -21,30 +21,29 @@ public class ProposeControllerTest {
     @Test
     public void givenIsValidCharOrWordWhenInsertStringWithNumbersThenGetFalse(){
         String sample = "123test123";
-        assertThat(this.proposeController.isValidCharOrWord(sample), is (false));
+        assertThat(this.proposeController.isValidCharacterOrString(sample), is (false));
     }
 
     @Test
     public void givenIsValidCharOrWordWhenInsertStringWithSimbolsThenGetFalse(){
         String sample = "?test?#";
-        assertThat(this.proposeController.isValidCharOrWord(sample), is (false));
+        assertThat(this.proposeController.isValidCharacterOrString(sample), is (false));
     }
 
     @Test
     public void givenIsValidCharOrWordWhenInsertStringWithSpacesThenGetFalse(){
         String sample = "test test";
-        assertThat(this.proposeController.isValidCharOrWord(sample), is (false));
+        assertThat(this.proposeController.isValidCharacterOrString(sample), is (false));
     }
 
     @Test
     public void givenIsValidCharOrWordWhenInsertStringWithOutNumbersAndSimbolsAndSpacesThenGetTrue(){
         String sample = "tést";
-        assertThat(this.proposeController.isValidCharOrWord(sample), is (true));
+        assertThat(this.proposeController.isValidCharacterOrString(sample), is (true));
     }
 
-//    @Test  //todo para espacios, frases
-//    public void givenIsValidCharOrWordWhenInsertStringWithOutNumbersAndWithSpacesThenGetTrue(){
-//        String sample = "test Test";
-//        assertThat(this.proposeController.isValidCharOrWord(sample), is (true));
-//    }
+    @Test
+    public void givenCompareCharOrWordWithSecretWhenCharIsOnSecretThenReturnTrue(){
+
+    }
 }
