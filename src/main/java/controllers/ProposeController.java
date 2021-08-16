@@ -43,9 +43,9 @@ public class ProposeController extends Controller {
         return matcher.matches();
     }
 
-    public void compareCharOrStringWithSecret(ReturnInputValue getUserInput) {
+    public void compareCharacterOrStringWithSecret(ReturnInputValue getUserInput) {//todo return boolean, message in view, separate char and string
         if (getUserInput.isString()){
-            if(this.game.isCharOrWordPresentOnSecret(getUserInput.getString())){
+            if(this.game.isCharacterOrStringPresentOnSecret(getUserInput.getString())){
                 for (int i = 0; i < getUserInput.getString().length(); i++){
                     this.game.getCurrentPlayer().addMatchedChars(getUserInput.getString().charAt(i));
                 }
@@ -60,7 +60,7 @@ public class ProposeController extends Controller {
             }
         }
         if (getUserInput.isCharacter()){
-            if(this.game.isCharOrWordPresentOnSecret(getUserInput.getCharacter())){
+            if(this.game.isCharacterOrStringPresentOnSecret(getUserInput.getCharacter())){
                 this.game.getCurrentPlayer().addMatchedChars(getUserInput.getCharacter());
                 Console.getInstance().writeln(MessageView.FINE_PROPOSED.getMessage());
             }else{

@@ -12,18 +12,20 @@ public class ProposeView {
     public void interact(ProposeController proposeController){
         this.proposeController = proposeController;
         header();
-        proposeController.compareCharOrStringWithSecret(getUserInput());
-        printResult();
+        proposeController.compareCharacterOrStringWithSecret(getUserInput());
         if (proposeController.isPlayerEnd()){
             Console.getInstance().writeln(MessageView.PLAYER_LOSE.getMessage() + proposeController.getCurrentPlayerName() + "!");
             proposeController.removeCurrentPlayer();
         }
+//        if (proposeController.isPlayerWin()){ //todo
+//            printResult();
+//        }
         proposeController.nextPlayer();
     }
 
     private void header(){
-        Console.getInstance().writeln(MessageView.TURN_NAME.getMessage() + this.proposeController.getCurrentPlayerName());
         Console.getInstance().writeln(this.proposeController.getHangedPartStateFromCurrentPlayer().getHangedPart());
+        Console.getInstance().writeln(MessageView.TURN_NAME.getMessage() + this.proposeController.getCurrentPlayerName());
         Console.getInstance().writeln(MessageView.SECRET_TITLE.getMessage() + this.proposeController.getStripes());
     }
 
