@@ -14,11 +14,11 @@ public class Word {
         Random random = new Random();
         switch(random.nextInt(3)) {
             case 0:
-                return "aabb";
+                return "casa";
             case 1:
-                return "ccdd";
+                return "calabaza";
             case 2:
-                return "eeff";
+                return "ñu";
         }
         return "";
     }

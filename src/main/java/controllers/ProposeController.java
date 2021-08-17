@@ -43,34 +43,45 @@ public class ProposeController extends Controller {
         return matcher.matches();
     }
 
-    public void compareCharacterOrStringWithSecret(ReturnInputValue getUserInput) {//todo return boolean, message in view, separate char and string
+    public boolean isEqualWithSecret(ReturnInputValue getUserInput){
         if (getUserInput.isString()){
-            if(this.game.isCharacterOrStringPresentOnSecret(getUserInput.getString())){
-                for (int i = 0; i < getUserInput.getString().length(); i++){
-                    this.game.getCurrentPlayer().addMatchedChars(getUserInput.getString().charAt(i));
-                }
-                Console.getInstance().writeln(MessageView.PLAYER_WIN.getMessage() + this.getCurrentPlayerName()  + "!");
-                nextGameState();
-            }else{
-                Console.getInstance().writeln(MessageView.FAIL_PROPOSED.getMessage());
-                this.game.getCurrentPlayer().setHangedPartState(HangedParts.L_LEG);
-                if (this.game.getNumberOfPlayers() == 0){
-                    nextGameState();
-                }
-            }
+            return isEqualWithSecret(getUserInput.getString());
         }
         if (getUserInput.isCharacter()){
-            if(this.game.isCharacterOrStringPresentOnSecret(getUserInput.getCharacter())){
-                this.game.getCurrentPlayer().addMatchedChars(getUserInput.getCharacter());
-                Console.getInstance().writeln(MessageView.FINE_PROPOSED.getMessage());
-            }else{
-                Console.getInstance().writeln(MessageView.FAIL_PROPOSED.getMessage());
-                this.game.getCurrentPlayer().increaseHangedPartState();
-               if(this.game.getCurrentPlayer().getHangedPartState() == HangedParts.L_LEG && this.game.getNumberOfPlayers() == 0){
-                       nextGameState();
-               }
+            return isEqualWithSecret(getUserInput.getCharacter());
+        }
+        return false;
+    }
+
+    private boolean isEqualWithSecret(String getUserInput) {
+        boolean isEqual = false;
+        if (this.game.isCharacterOrStringPresentOnSecret(getUserInput)) {
+            for (int i = 0; i < getUserInput.length(); i++) {
+                this.game.getCurrentPlayer().addMatchedChars(getUserInput.charAt(i));
+                nextGameState();
+            }
+            isEqual = true;
+        }else{
+            this.game.getCurrentPlayer().setHangedPartState(HangedParts.L_LEG);
+            if (this.game.getNumberOfPlayers() == 0){
+                nextGameState();
             }
         }
+        return isEqual;
+    }
+
+    private boolean isEqualWithSecret(Character getUserInput){
+        boolean isEqual = false;
+        if(this.game.isCharacterOrStringPresentOnSecret(getUserInput)){
+            this.game.getCurrentPlayer().addMatchedChars(getUserInput);
+            isEqual = true;
+        }else{
+            this.game.getCurrentPlayer().increaseHangedPartState();
+            if(this.game.getCurrentPlayer().getHangedPartState() == HangedParts.L_LEG && this.game.getNumberOfPlayers() == 0){
+                nextGameState();
+            }
+        }
+        return isEqual;
     }
 
     public boolean isPlayerEnd(){

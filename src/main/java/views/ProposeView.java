@@ -12,7 +12,21 @@ public class ProposeView {
     public void interact(ProposeController proposeController){
         this.proposeController = proposeController;
         header();
-        proposeController.compareCharacterOrStringWithSecret(getUserInput());
+        ReturnInputValue userInput = getUserInput();
+        if(userInput.isString()){
+            if (proposeController.isEqualWithSecret(userInput)){
+                Console.getInstance().writeln(MessageView.PLAYER_WIN.getMessage() + this.proposeController.getCurrentPlayerName()  + "!");
+            } else {
+                Console.getInstance().writeln(MessageView.FAIL_PROPOSED.getMessage());
+            }
+        }
+        if(userInput.isCharacter()){
+            if (proposeController.isEqualWithSecret(userInput)){
+                Console.getInstance().writeln(MessageView.FINE_PROPOSED.getMessage());
+            } else {
+                Console.getInstance().writeln(MessageView.FAIL_PROPOSED.getMessage());
+            }
+        }
         if (proposeController.isPlayerEnd()){
             Console.getInstance().writeln(MessageView.PLAYER_LOSE.getMessage() + proposeController.getCurrentPlayerName() + "!");
             proposeController.removeCurrentPlayer();
@@ -43,16 +57,6 @@ public class ProposeView {
         }
         return returnInputValue;
     }
-
-
-
-//    private String getUserCharOrWordString(){
-//        String userCharOrWord;
-//        do{
-//            userCharOrWord = Console.getInstance().readString(MessageView.PROPOSE.getMessage());
-//        }while(!this.proposeController.isValidCharacterOrString(userCharOrWord));
-//        return userCharOrWord.toLowerCase();
-//    }
 
     private void printResult(){
         Console.getInstance().writeln(this.proposeController.getHangedPartStateFromCurrentPlayer().getHangedPart());
