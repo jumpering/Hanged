@@ -9,11 +9,11 @@ public enum MessageView {
     ASK_FOR_RESUME_GAME("Restart game?"),
     SECRET_TITLE("Secret: "),
     PROPOSE("Insert proposed char or word (only characters): "),
-    FAIL_PROPOSED("Character or word not found"),
-    FINE_PROPOSED("Character or word found"),
+    FAIL_PROPOSED("not found"),
+    FINE_PROPOSED("found!"),
     ERROR_PROPOSE("Only characters permited"),
-    PLAYER_LOSE("You lose player "),
-    PLAYER_WIN("You win player ");
+    PLAYER_LOSE("You lose "),
+    PLAYER_WIN("You win ");
 
     private String message;
 
