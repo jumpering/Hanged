@@ -52,7 +52,7 @@ public class ProposeView {
     }
 
     public ReturnInputValue getUserInput() {//todo with generics is possible?¿
-        String userStringInput = "";
+        String userStringInput;
         ReturnInputValue returnInputValue = new ReturnInputValue();
         do {
             userStringInput = Console.getInstance().readString(MessageView.PROPOSE.getMessage());
