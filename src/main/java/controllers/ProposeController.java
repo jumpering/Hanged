@@ -60,8 +60,6 @@ public class ProposeController extends Controller {
             isEqual = true;
         } else {
             this.game.getCurrentPlayer().setHangedPartState(HangedParts.L_LEG);
-            if (this.game.getNumberOfPlayers() == 0) {
-            }
         }
         return isEqual;
     }
@@ -73,22 +71,16 @@ public class ProposeController extends Controller {
             isEqual = true;
         } else {
             this.game.getCurrentPlayer().increaseHangedPartState();
-            if (this.game.getCurrentPlayer().getHangedPartState() == HangedParts.L_LEG && this.game.getNumberOfPlayers() == 0) {
-            }
         }
         return isEqual;
     }
 
-    public boolean isLengthCharacterEqual(){
+    public boolean isLengthCharacterEqualSecret(){
         return this.game.getSecretWordLength() == this.game.getCurrentPlayer().getMatchedChars().length;
     }
 
     public boolean isPlayerEnd() {
         return this.game.getCurrentPlayer().getHangedPartState() == HangedParts.L_LEG;
-    }
-
-    public void checkGameEnd(){
-
     }
 
     public void removeCurrentPlayer() {

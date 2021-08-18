@@ -25,7 +25,7 @@ public class ProposeView {
         if (userInput.isCharacter()) {
             if (proposeController.isEqualWithSecret(userInput)) {
                 Console.getInstance().writeln(MessageView.FINE_PROPOSED.getMessage());
-                if (this.proposeController.isLengthCharacterEqual()) {
+                if (this.proposeController.isLengthCharacterEqualSecret()) {
                     this.printResult();
                     this.proposeController.nextGameState();//todo logic
                 }
