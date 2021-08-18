@@ -3,8 +3,6 @@ package controllers;
 import models.Game;
 import models.ReturnInputValue;
 import types.HangedParts;
-import types.MessageView;
-import utils.Console;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -25,10 +23,10 @@ public class ProposeController extends Controller {
 
     public String getStripes() {
         char[] stripes = new char[this.game.getSecretWordLength()];
-        for (int i = 0; i < stripes.length; i++){
+        for (int i = 0; i < stripes.length; i++) {
             stripes[i] = '_';
-            for (int j = 0; j < this.game.getCurrentPlayer().getMatchedChars().length; j++){
-                if (this.game.containsCharInPosition(i,this.game.getCurrentPlayer().getMatchedChars()[j])){
+            for (int j = 0; j < this.game.getCurrentPlayer().getMatchedChars().length; j++) {
+                if (this.game.containsCharInPosition(i, this.game.getCurrentPlayer().getMatchedChars()[j])) {
                     stripes[i] = this.game.getCurrentPlayer().getMatchedChars()[j];
                 }
             }
@@ -43,11 +41,11 @@ public class ProposeController extends Controller {
         return matcher.matches();
     }
 
-    public boolean isEqualWithSecret(ReturnInputValue getUserInput){
-        if (getUserInput.isString()){
+    public boolean isEqualWithSecret(ReturnInputValue getUserInput) {
+        if (getUserInput.isString()) {
             return isEqualWithSecret(getUserInput.getString());
         }
-        if (getUserInput.isCharacter()){
+        if (getUserInput.isCharacter()) {
             return isEqualWithSecret(getUserInput.getCharacter());
         }
         return false;
@@ -55,48 +53,49 @@ public class ProposeController extends Controller {
 
     private boolean isEqualWithSecret(String getUserInput) {
         boolean isEqual = false;
-        if (this.game.isCharacterOrStringPresentOnSecret(getUserInput)) {
+        if (this.game.isUserInputPresentOnSecret(getUserInput)) {
             for (int i = 0; i < getUserInput.length(); i++) {
                 this.game.getCurrentPlayer().addMatchedChars(getUserInput.charAt(i));
-                nextGameState();
             }
             isEqual = true;
-        }else{
+        } else {
             this.game.getCurrentPlayer().setHangedPartState(HangedParts.L_LEG);
-            if (this.game.getNumberOfPlayers() == 0){
-                nextGameState();
+            if (this.game.getNumberOfPlayers() == 0) {
             }
         }
         return isEqual;
     }
 
-    private boolean isEqualWithSecret(Character getUserInput){
+    private boolean isEqualWithSecret(Character getUserInput) {
         boolean isEqual = false;
-        if(this.game.isCharacterOrStringPresentOnSecret(getUserInput)){
+        if (this.game.isUserInputPresentOnSecret(getUserInput)) {
             this.game.getCurrentPlayer().addMatchedChars(getUserInput);
             isEqual = true;
-        }else{
+        } else {
             this.game.getCurrentPlayer().increaseHangedPartState();
-            if(this.game.getCurrentPlayer().getHangedPartState() == HangedParts.L_LEG && this.game.getNumberOfPlayers() == 0){
-                nextGameState();
+            if (this.game.getCurrentPlayer().getHangedPartState() == HangedParts.L_LEG && this.game.getNumberOfPlayers() == 0) {
             }
         }
         return isEqual;
     }
 
-    public boolean isPlayerEnd(){
+    public boolean isPlayerEnd() {
         return this.game.getCurrentPlayer().getHangedPartState() == HangedParts.L_LEG;
     }
 
-    public void removeCurrentPlayer(){
+    public void removeCurrentPlayer() {
         this.game.removeCurrentPlayer();
     }
 
-    public HangedParts getHangedPartStateFromCurrentPlayer(){
+    public HangedParts getHangedPartStateFromCurrentPlayer() {
         return this.game.getCurrentPlayer().getHangedPartState();
     }
 
-    public void nextPlayer(){
+    public void nextPlayer() {
         this.game.nextPlayer();
+    }
+
+    public int getNumberOfPlayers() {
+        return this.game.getNumberOfPlayers();
     }
 }

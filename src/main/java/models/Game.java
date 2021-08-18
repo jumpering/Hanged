@@ -35,12 +35,12 @@ public class Game {
     }
 
 
-    public boolean isCharacterOrStringPresentOnSecret(String userWord) {
+    public boolean isUserInputPresentOnSecret(String userWord) {
         return this.secrets[this.turn.getCurrentNumberOfPlayer()].isEqualWord(userWord);
     }
 
 
-    public boolean isCharacterOrStringPresentOnSecret(char userChar) {
+    public boolean isUserInputPresentOnSecret(char userChar) {
         return this.secrets[this.turn.getCurrentNumberOfPlayer()].isEqualCharInAnyPosition(userChar);
     }
 

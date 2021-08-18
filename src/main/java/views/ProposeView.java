@@ -16,6 +16,8 @@ public class ProposeView {
         if(userInput.isString()){
             if (proposeController.isEqualWithSecret(userInput)){
                 Console.getInstance().writeln(MessageView.PLAYER_WIN.getMessage() + this.proposeController.getCurrentPlayerName()  + "!");
+                this.printResult();
+                this.proposeController.nextGameState();
             } else {
                 Console.getInstance().writeln(MessageView.FAIL_PROPOSED.getMessage());
             }
@@ -31,10 +33,11 @@ public class ProposeView {
             Console.getInstance().writeln(MessageView.PLAYER_LOSE.getMessage() + proposeController.getCurrentPlayerName() + "!");
             proposeController.removeCurrentPlayer();
         }
-//        if (proposeController.isPlayerWin()){ //todo
-//            printResult();
-//        }
-        proposeController.nextPlayer();
+        if (this.proposeController.getNumberOfPlayers() == 0){
+            this.proposeController.nextGameState();
+        } else {
+            proposeController.nextPlayer();
+        }
     }
 
     private void header(){
