@@ -16,11 +16,5 @@ public class GameTest {
         this.game = new Game();
     }
 
-    @Test
-    public void givenGetCurrentPlayerWhenAssignNameToPlayerThenReturnName(){//todo not here, in turnTest
-        this.game.setNameForPlayer("x");
-        assertThat(this.game.getCurrentPlayerName(), is("x"));
-    }
-
 
 }

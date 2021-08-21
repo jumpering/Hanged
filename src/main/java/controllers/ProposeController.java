@@ -22,7 +22,7 @@ public class ProposeController extends Controller {
     }
 
     public String getStripes() {
-        char[] stripes = new char[this.game.getSecretWordLength()];
+        char[] stripes = new char[this.game.getSecretWordLength(this.game.getCurrentPlayer())];
         for (int i = 0; i < stripes.length; i++) {
             stripes[i] = '_';
             for (int j = 0; j < this.game.getCurrentPlayer().getMatchedChars().length; j++) {
@@ -75,8 +75,15 @@ public class ProposeController extends Controller {
         return isEqual;
     }
 
-    public boolean isLengthCharacterEqualSecret(){
-        return this.game.getSecretWordLength() == this.game.getCurrentPlayer().getMatchedChars().length;
+    public boolean isLengthEqualSecret(ReturnInputValue getUserInput){
+        boolean isLengthEqual = false;
+        if (getUserInput.isString() && this.game.getSecretWordLength(this.game.getCurrentPlayer()) == getUserInput.getString().length()){
+            isLengthEqual = true;
+        }
+        if (getUserInput.isCharacter() && this.game.getSecretWordLength(this.game.getCurrentPlayer()) == this.game.getCurrentPlayer().getMatchedChars().length){
+            isLengthEqual = true;
+        }
+        return isLengthEqual;
     }
 
     public boolean isPlayerEnd() {
@@ -84,7 +91,7 @@ public class ProposeController extends Controller {
     }
 
     public void removeCurrentPlayer() {
-        this.game.removeCurrentPlayer();
+        this.game.removeCurrentPlayer(this.game.getCurrentPlayer());
     }
 
     public HangedParts getHangedPartStateFromCurrentPlayer() {

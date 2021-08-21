@@ -44,4 +44,18 @@ public class Turn {
     public void removeCurrentPlayer() {
         this.players.remove(this.currentNumberOfPlayer);
     }
+
+    public void setNumberOfPlayers(int numberOfPlayers){
+        this.currentNumberOfPlayer = numberOfPlayers;
+    }
+
+    public Player getPlayerByName(String playerName){
+        Player player = null;
+        for (Player players: this.players){
+            if (players.getName().equals(playerName)){
+                player =  players;
+            }
+        }
+        return player;
+    }
 }

@@ -1,76 +1,77 @@
 package models;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Game {
 
     private Turn turn;
     private State state;
-    private Secret[] secrets;
+    private Map<Player, Secret> secrets;
 
-    public Game(){
+
+    public Game() {
         restart();
     }
 
-    public void setNameForPlayer(String playerName){
+    public void setPlayerName(String playerName) {
         this.turn.addPlayer(playerName);
     }
 
-    public void nextGameState(){
+    public void nextGameState() {
         this.state.next();
     }
 
-    public StateValue getStateValue(){
+    public StateValue getStateValue() {
         return this.state.getStateValue();
     }
 
-    public String getCurrentPlayerName(){
+    public String getCurrentPlayerName() {
         return this.turn.getCurrentPlayerName();
     }
 
-    public Player getCurrentPlayer(){
+    public Player getCurrentPlayer() {
         return this.turn.getCurrentPlayer();
     }
 
-    public int getSecretWordLength(){
-        return this.secrets[this.turn.getCurrentNumberOfPlayer()].getLength();
+    public int getSecretWordLength(Player player) {
+        return this.secrets.get(player).getLength();
     }
 
 
     public boolean isUserInputPresentOnSecret(String userWord) {
-        return this.secrets[this.turn.getCurrentNumberOfPlayer()].isEqualWord(userWord);
+        return this.secrets.get(this.getCurrentPlayer()).isEqualWord(userWord);
     }
 
 
     public boolean isUserInputPresentOnSecret(char userChar) {
-        return this.secrets[this.turn.getCurrentNumberOfPlayer()].isEqualCharInAnyPosition(userChar);
+        return this.secrets.get(this.getCurrentPlayer()).isEqualCharInAnyPosition(userChar);
     }
 
-    public boolean containsCharInPosition(int position, char userChar){
-        return this.secrets[this.turn.getCurrentNumberOfPlayer()].isEqualCharInConcretePosition(position, userChar);
+    public boolean containsCharInPosition(int position, char userChar) {
+        return this.secrets.get(this.getCurrentPlayer()).isEqualCharInConcretePosition(position, userChar);
     }
 
-    public void nextPlayer(){
+    public void nextPlayer() {
         this.turn.nextPlayer();
     }
 
-    public void setNumberOfSecretWords(int numberOfPlayers) {
-        this.secrets = new Secret[numberOfPlayers];
-        for (int i = 0; i < numberOfPlayers; i++){
-            this.secrets[i] = new Secret(new Word());
-        }
+    public void removeCurrentPlayer(Player player) {
+        this.turn.removeCurrentPlayer();
+        this.secrets.remove(player);
     }
 
-    public void removeCurrentPlayer() {
-        if (this.turn.getNumberOfPlayers() > 0){
-            this.turn.removeCurrentPlayer();
-        }
-    }
-
-    public void restart(){
+    public void restart() {
         this.turn = new Turn();
         this.state = new State();
+        this.secrets = new HashMap<Player, Secret>();
     }
 
     public int getNumberOfPlayers() {
         return this.turn.getNumberOfPlayers();
+    }
+
+    public void setSecretForPlayer(String playerName) {
+        this.secrets.put(this.turn.getPlayerByName(playerName), new Secret(new Word()));
     }
 }

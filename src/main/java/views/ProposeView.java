@@ -11,33 +11,14 @@ public class ProposeView {
 
     public void interact(ProposeController proposeController) {
         this.proposeController = proposeController;
-        header();
+        showHeader();
         ReturnInputValue userInput = getUserInput();
         if (userInput.isString()) {
-            if (proposeController.isEqualWithSecret(userInput)) {
-                Console.getInstance().writeln(MessageView.PLAYER_WIN.getMessage() + this.proposeController.getCurrentPlayerName() + "!");
-                this.printResult();
-                this.proposeController.nextGameState();//todo logic
-            } else {
-                Console.getInstance().writeln(MessageView.FAIL_PROPOSED.getMessage());
-            }
+            this.proposeUserInput(userInput,MessageView.PLAYER_WIN.getMessage() + this.proposeController.getCurrentPlayerName() + "!");
         }
         if (userInput.isCharacter()) {
-            if (proposeController.isEqualWithSecret(userInput)) {
-                Console.getInstance().writeln(MessageView.FINE_PROPOSED.getMessage());
-                if (this.proposeController.isLengthCharacterEqualSecret()) {
-                    this.printResult();
-                    this.proposeController.nextGameState();//todo logic
-                }
-            } else {
-                Console.getInstance().writeln(MessageView.FAIL_PROPOSED.getMessage());
-            }
+            this.proposeUserInput(userInput,MessageView.FINE_PROPOSED.getMessage());
         }
-        if (proposeController.isPlayerEnd()) {
-            Console.getInstance().writeln(MessageView.PLAYER_LOSE.getMessage() + proposeController.getCurrentPlayerName() + "!");
-            proposeController.removeCurrentPlayer();//todo logic
-        }
-        
         if (this.proposeController.getNumberOfPlayers() == 0) {//todo logic
             this.proposeController.nextGameState();
         } else {
@@ -45,13 +26,13 @@ public class ProposeView {
         }
     }
 
-    private void header() {
+    private void showHeader() {
         Console.getInstance().writeln(this.proposeController.getHangedPartStateFromCurrentPlayer().getHangedPart());
         Console.getInstance().writeln(MessageView.TURN_NAME.getMessage() + this.proposeController.getCurrentPlayerName());
         Console.getInstance().writeln(MessageView.SECRET_TITLE.getMessage() + this.proposeController.getStripes());
     }
 
-    public ReturnInputValue getUserInput() {//todo with generics is possible?¿
+    private ReturnInputValue getUserInput() {//todo with generics is possible?¿
         String userStringInput;
         ReturnInputValue returnInputValue = new ReturnInputValue();
         do {
@@ -64,6 +45,23 @@ public class ProposeView {
             returnInputValue.setString(userStringInput.toLowerCase());
         }
         return returnInputValue;
+    }
+
+    private void proposeUserInput(ReturnInputValue userInput, String messageIsEqualToSecret){
+        if (proposeController.isEqualWithSecret(userInput)) {
+            Console.getInstance().writeln(messageIsEqualToSecret);
+            if (this.proposeController.isLengthEqualSecret(userInput)) {
+                System.out.println("traza");
+                this.printResult();
+                this.proposeController.nextGameState();//todo logic
+            }
+        } else {
+            Console.getInstance().writeln(MessageView.FAIL_PROPOSED.getMessage());
+            if (proposeController.isPlayerEnd()) {
+                Console.getInstance().writeln(MessageView.PLAYER_LOSE.getMessage() + proposeController.getCurrentPlayerName() + "!");
+                proposeController.removeCurrentPlayer();//todo logic
+            }
+        }
     }
 
     private void printResult() {
