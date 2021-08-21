@@ -105,4 +105,8 @@ public class ProposeController extends Controller {
     public int getNumberOfPlayers() {
         return this.game.getNumberOfPlayers();
     }
+
+    public String showCurrentPlayerSecret(){
+        return this.game.getPlayerSecret();
+    }
 }

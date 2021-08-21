@@ -48,18 +48,18 @@ public class ProposeView {
     }
 
     private void proposeUserInput(ReturnInputValue userInput, String messageIsEqualToSecret){
-        if (proposeController.isEqualWithSecret(userInput)) {
+        if (this.proposeController.isEqualWithSecret(userInput)) {
             Console.getInstance().writeln(messageIsEqualToSecret);
             if (this.proposeController.isLengthEqualSecret(userInput)) {
-                System.out.println("traza");
                 this.printResult();
                 this.proposeController.nextGameState();//todo logic
             }
         } else {
             Console.getInstance().writeln(MessageView.FAIL_PROPOSED.getMessage());
-            if (proposeController.isPlayerEnd()) {
+            if (this.proposeController.isPlayerEnd()) {
                 Console.getInstance().writeln(MessageView.PLAYER_LOSE.getMessage() + proposeController.getCurrentPlayerName() + "!");
-                proposeController.removeCurrentPlayer();//todo logic
+                Console.getInstance().writeln(this.proposeController.showCurrentPlayerSecret());
+                this.proposeController.removeCurrentPlayer();//todo logic
             }
         }
     }

@@ -14,8 +14,9 @@ public class Game {
         restart();
     }
 
-    public void setPlayerName(String playerName) {
+    public void addPlayer(String playerName) {
         this.turn.addPlayer(playerName);
+        setSecretForPlayer(getLastPlayer());
     }
 
     public void nextGameState() {
@@ -71,7 +72,15 @@ public class Game {
         return this.turn.getNumberOfPlayers();
     }
 
-    public void setSecretForPlayer(String playerName) {
-        this.secrets.put(this.turn.getPlayerByName(playerName), new Secret(new Word()));
+    public void setSecretForPlayer(Player player) {
+        this.secrets.put(player, new Secret(new Word()));
+    }
+
+    public String getPlayerSecret(){
+        return this.secrets.get(this.turn.getCurrentPlayer()).toString();
+    }
+
+    public Player getLastPlayer(){
+        return this.turn.getLastPlayer();
     }
 }

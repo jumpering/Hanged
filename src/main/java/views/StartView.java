@@ -17,8 +17,7 @@ public class StartView {
             String playerName;
             Console.getInstance().write(MessageView.NUMBER_OF_PLAYER.getMessage() + "" + (i + 1) + " ");
             playerName = Console.getInstance().readString(MessageView.ASK_FOR_NAME_OF_PLAYER.getMessage());
-            this.startController.setPlayerName(playerName);
-            this.startController.setSecretForPlayer(playerName);
+            this.startController.addPlayer(playerName);
         }
         startController.nextGameState();
     }
