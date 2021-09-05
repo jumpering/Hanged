@@ -27,5 +27,4 @@ public class TurnTest {
         this.turn.removeCurrentPlayer();
         assertThat(this.turn.getCurrentNumberOfPlayer(), is(0));
     }
-
 }

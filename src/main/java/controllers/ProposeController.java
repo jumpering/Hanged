@@ -3,6 +3,7 @@ package controllers;
 import models.Game;
 import models.ReturnInputValue;
 import types.HangedParts;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -25,9 +26,9 @@ public class ProposeController extends Controller {
         char[] stripes = new char[this.game.getSecretWordLength(this.game.getCurrentPlayer())];
         for (int i = 0; i < stripes.length; i++) {
             stripes[i] = '_';
-            for (int j = 0; j < this.game.getCurrentPlayer().getMatchedChars().length; j++) {
-                if (this.game.containsCharInPosition(i, this.game.getCurrentPlayer().getMatchedChars()[j])) {
-                    stripes[i] = this.game.getCurrentPlayer().getMatchedChars()[j];
+            for (int j = 0; j < this.game.getCurrentPlayer().getMatchedCharacters().length; j++) {
+                if (this.game.containsCharInPosition(i, this.game.getCurrentPlayer().getMatchedCharacters()[j])) {
+                    stripes[i] = this.game.getCurrentPlayer().getMatchedCharacters()[j];
                 }
             }
         }
@@ -41,7 +42,7 @@ public class ProposeController extends Controller {
         return matcher.matches();
     }
 
-    public boolean isEqualWithSecret(ReturnInputValue getUserInput) {
+    public boolean isEqualWithSecret(ReturnInputValue getUserInput) {//todo with factory method?
         if (getUserInput.isString()) {
             return isEqualWithSecret(getUserInput.getString());
         }
@@ -75,14 +76,34 @@ public class ProposeController extends Controller {
         return isEqual;
     }
 
-    public boolean isLengthEqualSecret(ReturnInputValue getUserInput){
+    public boolean isLengthEqualSecret(ReturnInputValue getUserInput) {
         boolean isLengthEqual = false;
-        if (getUserInput.isString() && this.game.getSecretWordLength(this.game.getCurrentPlayer()) == getUserInput.getString().length()){
+        int lengthTotalMatched = 0;
+        if (getUserInput.isString() && this.game.getSecretWordLength(this.game.getCurrentPlayer()) == getUserInput.getString().length()) {
             isLengthEqual = true;
         }
-        if (getUserInput.isCharacter() && this.game.getSecretWordLength(this.game.getCurrentPlayer()) == this.game.getCurrentPlayer().getMatchedChars().length){
-            isLengthEqual = true;
+        if (getUserInput.isCharacter()) {
+
+            for (Character characters : this.game.getCurrentPlayer().getMatchedCharacters()) {
+                for (int i = 0; i < this.game.getLengthPlayerSecretWord(); i++) {
+                    if (this.game.getPlayerSecretWord().charAt(i) == characters) {
+                        //this.game.getCurrentPlayer().incrementTotalMatchedCharacters();
+                        lengthTotalMatched++;
+                    }
+                }
+            }
+            this.game.getCurrentPlayer().setTotalMatchedCharacters(lengthTotalMatched);
+
+            if (this.game.getSecretWordLength(this.game.getCurrentPlayer()) == this.game.getCurrentPlayer().getTotalMatchedCharacters()) {
+                isLengthEqual = true;
+            }
         }
+//        if (getUserInput.isCharacter() && this.game.getSecretWordLength(this.game.getCurrentPlayer()) == this.game.getCurrentPlayer().getMatchedCharacters().length){
+//            isLengthEqual = true;
+//        }
+        System.out.println(this.game.getCurrentPlayer().getTotalMatchedCharacters());//todo claro, las letras se repiten primo
+        System.out.println(":::");
+        System.out.println(this.game.getSecretWordLength(this.game.getCurrentPlayer()));
         return isLengthEqual;
     }
 
@@ -106,7 +127,7 @@ public class ProposeController extends Controller {
         return this.game.getNumberOfPlayers();
     }
 
-    public String showCurrentPlayerSecret(){
-        return this.game.getPlayerSecret();
+    public String showCurrentPlayerSecret() {
+        return this.game.getPlayerSecretWord();
     }
 }

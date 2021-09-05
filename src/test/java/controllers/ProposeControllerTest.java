@@ -1,6 +1,7 @@
 package controllers;
 
 import models.Game;
+import models.ReturnInputValue;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -43,7 +44,11 @@ public class ProposeControllerTest {
     }
 
     @Test
-    public void givenCompareCharOrWordWithSecretWhenCharIsOnSecretThenReturnTrue(){
-
+    public void givenIsEqualWithSecretWhenGetUserInputCharacterIsPresentOnSecretThenReturnTrue(){
+        ReturnInputValue returnInputValue = new ReturnInputValue();
+        returnInputValue.setCharacter('c');
+        boolean test = this.proposeController.isEqualWithSecret(returnInputValue);
+        System.out.println(test);
+        assertThat(test, is(true));
     }
 }

@@ -9,7 +9,7 @@ public class ProposeView {
 
     private ProposeController proposeController;
 
-    public void interact(ProposeController proposeController) {
+    public void interact(ProposeController proposeController) { //todo No Open/Close
         this.proposeController = proposeController;
         showHeader();
         ReturnInputValue userInput = getUserInput();
@@ -32,7 +32,7 @@ public class ProposeView {
         Console.getInstance().writeln(MessageView.SECRET_TITLE.getMessage() + this.proposeController.getStripes());
     }
 
-    private ReturnInputValue getUserInput() {//todo with generics is possible?¿
+    private ReturnInputValue getUserInput() {//todo with generics is possible?¿ //todo no Open/Close
         String userStringInput;
         ReturnInputValue returnInputValue = new ReturnInputValue();
         do {
@@ -48,6 +48,7 @@ public class ProposeView {
     }
 
     private void proposeUserInput(ReturnInputValue userInput, String messageIsEqualToSecret){
+        //todo SI EXISTE CAMBA DE PLAYER I NO PUNTUA WTF
         if (this.proposeController.isEqualWithSecret(userInput)) {
             Console.getInstance().writeln(messageIsEqualToSecret);
             if (this.proposeController.isLengthEqualSecret(userInput)) {
@@ -58,7 +59,7 @@ public class ProposeView {
             Console.getInstance().writeln(MessageView.FAIL_PROPOSED.getMessage());
             if (this.proposeController.isPlayerEnd()) {
                 Console.getInstance().writeln(MessageView.PLAYER_LOSE.getMessage() + proposeController.getCurrentPlayerName() + "!");
-                Console.getInstance().writeln(this.proposeController.showCurrentPlayerSecret());
+                Console.getInstance().writeln(MessageView.SECRET_TITLE + this.proposeController.showCurrentPlayerSecret());
                 this.proposeController.removeCurrentPlayer();//todo logic
             }
         }

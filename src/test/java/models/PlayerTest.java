@@ -22,4 +22,16 @@ public class PlayerTest {
         assertThat(this.player.getHangedPartState(), is(HangedParts.BASE));
     }
 
+    @Test
+    public void givenAddMatchedCharsWhenGameStartThenGetMatchedCharactersLengthReturnZero(){
+        assertThat(this.player.getMatchedCharacters().length, is(0));
+    }
+
+    @Test
+    public void givenAddMatchedCharsWhenAddExistingCharacterOnSetThenNoCharacterAddedOnGetMatchedCharactersLength(){
+        this.player.addMatchedChars('c');
+        assertThat(this.player.getMatchedCharacters().length, is(1));
+        this.player.addMatchedChars('c');
+        assertThat(this.player.getMatchedCharacters().length, is(1));
+    }
 }

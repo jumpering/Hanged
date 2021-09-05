@@ -8,12 +8,22 @@ public class Player {
 
     private String name;
     private HangedParts hangedPartState;
-    private Set<Character> matchedChars;
+    private Set<Character> matchedCharacters;
+    private int totalMatchedCharacters;
 
     public Player(String name){
         this.name = name;
         this.hangedPartState = HangedParts.BOARD_PAPER;
-        this.matchedChars = new HashSet<>();
+        this.matchedCharacters = new HashSet<>();
+        this.totalMatchedCharacters = 0;
+    }
+
+//    public void incrementTotalMatchedCharacters(){
+//        this.totalMatchedCharacters++;
+//    }
+
+    public void setTotalMatchedCharacters(int totalMatchedCharacters){
+        this.totalMatchedCharacters = totalMatchedCharacters;
     }
 
     public void setName(String name){
@@ -37,12 +47,16 @@ public class Player {
     }
 
     public void addMatchedChars(Character character){
-        this.matchedChars.add(character);
+        this.matchedCharacters.add(character);
     }
 
-    public Character[] getMatchedChars(){
-        Character[] chars = new Character[this.matchedChars.size()];
-        this.matchedChars.toArray(chars);
+    public Character[] getMatchedCharacters(){
+        Character[] chars = new Character[this.matchedCharacters.size()];
+        this.matchedCharacters.toArray(chars);
         return chars;
+    }
+
+    public int getTotalMatchedCharacters() {
+        return this.totalMatchedCharacters;
     }
 }

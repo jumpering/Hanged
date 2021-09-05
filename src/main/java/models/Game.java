@@ -14,9 +14,19 @@ public class Game {
         restart();
     }
 
+    public void restart() {
+        this.turn = new Turn();
+        this.state = new State();
+        this.secrets = new HashMap<Player, Secret>();
+    }
+
     public void addPlayer(String playerName) {
         this.turn.addPlayer(playerName);
         setSecretForPlayer(getLastPlayer());
+    }
+
+    private void setSecretForPlayer(Player player) {
+        this.secrets.put(player, new Secret(new Word()));
     }
 
     public void nextGameState() {
@@ -62,23 +72,17 @@ public class Game {
         this.secrets.remove(player);
     }
 
-    public void restart() {
-        this.turn = new Turn();
-        this.state = new State();
-        this.secrets = new HashMap<Player, Secret>();
-    }
-
     public int getNumberOfPlayers() {
         return this.turn.getNumberOfPlayers();
     }
 
-    public void setSecretForPlayer(Player player) {
-        this.secrets.put(player, new Secret(new Word()));
+    public String getPlayerSecretWord(){
+        return this.secrets.get(this.turn.getCurrentPlayer()).getWord();
     }
-
-    public String getPlayerSecret(){
-        return this.secrets.get(this.turn.getCurrentPlayer()).toString();
-    }
+    
+   public int getLengthPlayerSecretWord(){
+        return this.secrets.get(this.turn.getCurrentPlayer()).getLength();
+   }
 
     public Player getLastPlayer(){
         return this.turn.getLastPlayer();

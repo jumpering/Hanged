@@ -51,6 +51,4 @@ public class SecretTest {
     public void givenIsEqualCharInConcretePositionWhenInputIsEqualCharInOutOfBoundPositionOnSecretThenReturnFalse(){
         assertThat(this.secret.isEqualCharInConcretePosition(10,'s'), is(false));
     }
-
-
 }
