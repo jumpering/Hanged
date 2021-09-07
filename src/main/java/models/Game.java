@@ -9,7 +9,6 @@ public class Game {
     private State state;
     private Map<Player, Secret> secrets;
 
-
     public Game() {
         restart();
     }
