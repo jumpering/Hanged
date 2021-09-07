@@ -15,5 +15,6 @@ public class StartController extends Controller {
 
     public void addPlayer(String playerName){
         this.game.addPlayer(playerName);
+        this.game.setSecretForPlayer(this.game.getLastPlayer());
     }
 }

@@ -22,11 +22,14 @@ public class Game {
 
     public void addPlayer(String playerName) {
         this.turn.addPlayer(playerName);
-        setSecretForPlayer(getLastPlayer());
     }
 
-    private void setSecretForPlayer(Player player) {
+    public void setSecretForPlayer(Player player) {
         this.secrets.put(player, new Secret(new Word()));
+    }
+
+    public Player getLastPlayer(){
+        return this.turn.getLastPlayer();
     }
 
     public void nextGameState() {
@@ -83,8 +86,4 @@ public class Game {
    public int getLengthPlayerSecretWord(){
         return this.secrets.get(this.turn.getCurrentPlayer()).getLength();
    }
-
-    public Player getLastPlayer(){
-        return this.turn.getLastPlayer();
-    }
 }

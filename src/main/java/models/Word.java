@@ -19,7 +19,7 @@ public class Word {
         Random random = new Random();
         switch(random.nextInt(3)) {
             case 0:
-                return "casa";
+                return "caza";
             case 1:
                 return "calabaza";
             case 2:
