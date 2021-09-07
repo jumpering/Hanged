@@ -13,29 +13,26 @@ import static org.mockito.Mockito.when;
 @ExtendWith(MockitoExtension.class)
 public class GameTest {
 
+    @InjectMocks
+    private Game game = new Game();
+
     @Mock
     Word word;
 
-    private Secret secret;
-    @InjectMocks
-    private Game game;
-
     @BeforeEach
     public void beforeEach() {
-        this.game = new Game();
         String stringMocked = "secreta";
-        this.game.addPlayer("xavi");
         when(this.word.getWord()).thenReturn(stringMocked);
-        this.game.setSecretForPlayer(this.game.getLastPlayer());
         System.out.println("last player name is: " + this.game.getLastPlayer().getName());
-
-        this.secret = new Secret(this.word); //todo ¿hace falta crear objeto con @InjectMocks?
+        //this.secret = new Secret(this.word); //todo ¿hace falta crear objeto con @InjectMocks?
     }
 
     @Test
     public void givenIsUserInputPresentOnSecretWhenGetUserInputCharacterIsPresentOnSecretThenReturnTrue() {
-        System.out.println(this.secret.getLength());
-        System.out.println(this.secret.getWord());
+        //System.out.println(this.secret.getLength());
+        //System.out.println(this.secret.getWord());
+        this.game.addPlayer("xavi");
+        this.game.setSecretForPlayer(this.game.getLastPlayer());
         //this.gameMock.setSecretForPlayer(new Player("xavi"), this.secret);
         //assertThat(this.gameMock.isUserInputPresentOnSecret('s'), is(true));
         assertThat(this.game.isUserInputPresentOnSecret('s'), is(true));

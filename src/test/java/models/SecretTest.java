@@ -14,21 +14,22 @@ import static org.mockito.Mockito.when;
 @ExtendWith(MockitoExtension.class)
 public class SecretTest {
 
+    @InjectMocks
+    private Secret secret = new Secret();
+
     @Mock
     Word word;
 
-    //@InjectMocks
-    private Secret secret;
-
     @BeforeEach
-    public void before(){
+    public void init(){
         String stringMocked = "secreta";
         when(this.word.getWord()).thenReturn(stringMocked);
-        this.secret = new Secret(this.word); //todo ¿hace falta crear objeto con @InjectMocks?
     }
 
     @Test
     public void givenContainCharWhenInputCharacterIsPresentOnSecretThenReturnTrue() throws IOException {
+        System.out.println(this.word.getWord());
+        System.out.println(this.secret.getSecret());
         assertThat(this.secret.isEqualCharInAnyPosition('s'), is(true));
     }
 

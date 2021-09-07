@@ -24,7 +24,7 @@ public class Game {
     }
 
     public void setSecretForPlayer(Player player) {
-        this.secrets.put(player, new Secret(new Word()));
+        this.secrets.put(player, new Secret());
     }
 
     public Player getLastPlayer(){
@@ -79,7 +79,7 @@ public class Game {
     }
 
     public String getPlayerSecretWord(){
-        return this.secrets.get(this.turn.getCurrentPlayer()).getWord();
+        return this.secrets.get(this.turn.getCurrentPlayer()).getSecret();
     }
     
    public int getLengthPlayerSecretWord(){
