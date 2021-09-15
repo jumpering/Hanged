@@ -7,6 +7,10 @@ public class Secret {
 
     public Secret(){
         this.word = new Word();
+        this.setWord();
+    }
+
+    public void setWord(){
         this.secret = this.word.getWord();
     }
 

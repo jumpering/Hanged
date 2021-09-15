@@ -24,7 +24,8 @@ public class Game {
     }
 
     public void setSecretForPlayer(Player player) {
-        this.secrets.put(player, new Secret());
+        Secret secret = new Secret();
+        this.secrets.put(player, secret);
     }
 
     public Player getLastPlayer(){
