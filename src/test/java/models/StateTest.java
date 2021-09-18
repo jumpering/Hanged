@@ -36,7 +36,7 @@ public class StateTest {
     @Test
     public void givenNextStateWhenFirstNextStateThenStateIsUSER_PROPOSE(){
         this.state.next();
-        assertThat(this.state.getStateValue(), is(StateValue.USER_PROPOSE));
+        assertThat(this.state.getStateValue(), is(StateValue.PROPOSE));
     }
 
     @Test
