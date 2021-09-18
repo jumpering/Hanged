@@ -3,7 +3,8 @@ package models;
 public class Secret {
 
     private String secret;
-    private Word word;
+    //private Word word;
+    private WordBD word;
 
     public Secret(){
         this.word = new Word();

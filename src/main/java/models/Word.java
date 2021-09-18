@@ -1,11 +1,10 @@
 package models;
 
-import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class Word {
+public class Word implements WordBD{
 
     private String word;
     private List<String> wordArrayList;
@@ -26,6 +25,11 @@ public class Word {
                 return "ñu";
         }
         return "";
+    }
+
+    @Override
+    public String getWord() {
+        return this.word;
     }
 
 //    public String getFromFileRandom(){
@@ -56,7 +60,7 @@ public class Word {
 //        return this.wordArrayList.get(random.nextInt(this.wordArrayList.size()));
 //    }
 
-    public String getWord(){
-        return this.word;
-    }
+//    public String getWord(){
+//        return this.word;
+//    }
 }
