@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="818px" preserveAspectRatio="none" style="width:195px;height:818px;background:#FFFFFF;" version="1.1" viewBox="0 0 195 818" width="195px" zoomAndPan="magnify"><defs><filter height="300%" id="fa7snr45nxs3g" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><g id="INIT"><rect fill="#FEFECE" filter="url(#fa7snr45nxs3g)" height="50" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="50" x="85.5" y="87"/><line style="stroke:#A80036;stroke-width:1.5;" x1="85.5" x2="135.5" y1="114.6094" y2="114.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="24" x="98.5" y="106.5332">INIT</text></g><g id="IN_GAME"><rect fill="#FEFECE" filter="url(#fa7snr45nxs3g)" height="50" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="80" x="24.5" y="215"/><line style="stroke:#A80036;stroke-width:1.5;" x1="24.5" x2="104.5" y1="242.6094" y2="242.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="60" x="34.5" y="234.5332">IN_GAME</text></g><g id="OUT_GAME"><rect fill="#FEFECE" filter="url(#fa7snr45nxs3g)" height="50" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="97" x="7" y="445"/><line style="stroke:#A80036;stroke-width:1.5;" x1="7" x2="104" y1="472.6094" y2="472.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="77" x="17" y="464.5332">OUT_GAME</text></g><g id="EXIT"><rect fill="#FEFECE" filter="url(#fa7snr45nxs3g)" height="50" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="50" x="81.5" y="675"/><line style="stroke:#A80036;stroke-width:1.5;" x1="81.5" x2="131.5" y1="702.6094" y2="702.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="29" x="92" y="694.5332">EXIT</text></g><polygon fill="#FEFECE" filter="url(#fa7snr45nxs3g)" points="55.5,343,67.5,355,55.5,367,43.5,355,55.5,343" style="stroke:#A80036;stroke-width:1.5;"/><polygon fill="#FEFECE" filter="url(#fa7snr45nxs3g)" points="106.5,573,118.5,585,106.5,597,94.5,585,106.5,573" style="stroke:#A80036;stroke-width:1.5;"/><ellipse cx="110.5" cy="16" fill="#000000" filter="url(#fa7snr45nxs3g)" rx="10" ry="10" style="stroke:none;stroke-width:1.0;"/><ellipse cx="106.5" cy="796" filter="url(#fa7snr45nxs3g)" rx="10" ry="10" style="stroke:#000000;stroke-width:1.0;fill:none;"/><ellipse cx="107" cy="796.5" fill="#000000" rx="6" ry="6" style="stroke:none;stroke-width:1.0;"/><!--MD5=[de337d60c65d7a69d09434d7c5e39230]
+link *start to INIT--><path d="M110.5,26.01 C110.5,38.7 110.5,62.41 110.5,81.57 " fill="none" id="*start-to-INIT" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="110.5,86.84,114.5,77.84,110.5,81.84,106.5,77.84,110.5,86.84" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[75e264c35d46cb51bb03c4cd5ebef1c6]
+link INIT to IN_GAME--><path d="M101.63,137.29 C94.06,158.04 83.15,187.92 75.11,209.93 " fill="none" id="INIT-to-IN_GAME" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="73.34,214.78,80.1818,207.6955,75.0533,210.0827,72.6661,204.9542,73.34,214.78" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="28" x="91.5" y="181.4951">Start</text><!--MD5=[6c94d28bbf3b7179363a798c81c36448]
+link IN_GAME to IfIn_Game--><path d="M35.04,265.07 C26.79,273.57 18.88,283.82 14.5,295 C6.42,315.63 29.29,336.04 44.05,346.6 " fill="none" id="IN_GAME-to-IfIn_Game" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="48.33,349.55,43.1995,341.143,44.2165,346.7077,38.6518,347.7246,48.33,349.55" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="48" x="15.5" y="309.4951">Propose</text><!--MD5=[5bb5e46da4c12afb58f915c06b53ba48]
+link IfIn_Game to IN_GAME--><path d="M58.84,346.01 C62.05,337.87 66.67,324.81 68.5,313 C70.66,299.02 70.14,283.35 68.88,270.21 " fill="none" id="IfIn_Game-to-IN_GAME" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="68.34,265.12,65.314,274.4925,68.8686,270.092,73.2691,273.6467,68.34,265.12" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[d447aa2085fededd83fca1c3ba29f9a9]
+link IfIn_Game to OUT_GAME--><path d="M55.5,367.25 C55.5,383.96 55.5,415.91 55.5,439.57 " fill="none" id="IfIn_Game-to-OUT_GAME" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="55.5,444.79,59.5,435.79,55.5,439.79,51.5,435.79,55.5,444.79" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="52" x="56.5" y="411.4951">[finished]</text><!--MD5=[670328aff85a57da0ae1014337e2fd91]
+link OUT_GAME to IfOut_Game--><path d="M66.07,495.04 C72.26,509.06 80.26,527.06 87.5,543 C91.9,552.7 96.98,563.65 100.78,571.79 " fill="none" id="OUT_GAME-to-IfOut_Game" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="102.96,576.46,102.7771,566.6128,100.8448,571.9294,95.5282,569.9972,102.96,576.46" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="42" x="88.5" y="539.4951">Restart</text><!--MD5=[43f551a12177e3c2a19cd338375cab38]
+link IfOut_Game to INIT--><path d="M111.68,578 C118.07,570.34 128.9,556.46 135.5,543 C150.24,512.96 157.5,504.46 157.5,471 C157.5,239 157.5,239 157.5,239 C157.5,203.83 141.23,166.43 127.83,141.6 " fill="none" id="IfOut_Game-to-INIT" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="125.37,137.11,126.1815,146.9254,127.7703,141.4962,133.1994,143.0849,125.37,137.11" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="29" x="158.5" y="360.4951">[yes]</text><!--MD5=[e9ca5e90a6749a5f0d032e01060a2dd0]
+link IfOut_Game to EXIT--><path d="M106.5,597.25 C106.5,613.96 106.5,645.91 106.5,669.57 " fill="none" id="IfOut_Game-to-EXIT" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="106.5,674.79,110.5,665.79,106.5,669.79,102.5,665.79,106.5,674.79" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="22" x="107.5" y="641.4951">[no]</text><!--MD5=[bd19b40b84bbe903342104a02ae53ed4]
+link EXIT to *end--><path d="M106.5,725.21 C106.5,742.84 106.5,766.13 106.5,780.84 " fill="none" id="EXIT-to-*end" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="106.5,785.84,110.5,776.84,106.5,780.84,102.5,776.84,106.5,785.84" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[cafadc1c0f794a54a6daf5f32e691df0]
+@startuml
+'https://plantuml.com/state-diagram
+
+state INIT
+state IN_GAME
+state OUT_GAME
+state EXIT
+state IfIn_Game <<choice>>
+state IfOut_Game <<choice>>
+
+  [*] - -> INIT
+  INIT - -> IN_GAME : Start
+  IN_GAME - -> IfIn_Game : Propose
+  IfIn_Game - -> IN_GAME
+  IfIn_Game - -> OUT_GAME : [finished]
+  OUT_GAME - -> IfOut_Game : Restart
+  IfOut_Game - -> INIT : [yes]
+  IfOut_Game - -> EXIT : [no]
+  EXIT - -> [*]
+
+}
+@enduml
+
+@startuml
+
+state INIT
+state IN_GAME
+state OUT_GAME
+state EXIT
+state IfIn_Game <<choice>>
+state IfOut_Game <<choice>>
+
+  [*] - -> INIT
+  INIT - -> IN_GAME : Start
+  IN_GAME - -> IfIn_Game : Propose
+  IfIn_Game - -> IN_GAME
+  IfIn_Game - -> OUT_GAME : [finished]
+  OUT_GAME - -> IfOut_Game : Restart
+  IfOut_Game - -> INIT : [yes]
+  IfOut_Game - -> EXIT : [no]
+  EXIT - -> [*]
+
+}
+@enduml
+
+PlantUML version 1.2021.11(Sat Oct 02 15:26:11 CEST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: Cp1252
+Language: es
+Country: ES
+--></g></svg>
