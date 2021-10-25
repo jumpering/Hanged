@@ -1,10 +1,10 @@
 # Domain model
 ![ModelDomain](./images/DomainModel.svg "Modelo del dominio")
 
-#Actors
+# Actors
 ![ACTORS](./images/actorDiagram.svg)
 
-#Context Diagram
+# Context Diagram
 ![CONTEXTDIAGRAM](./images/useCaseContextDiagram.svg)
 
 # MVC (wip)
