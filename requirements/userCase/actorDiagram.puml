@@ -1,0 +1,12 @@
+@startuml
+'https://plantuml.com/use-case-diagram
+
+left to right direction
+actor Player as player
+usecase "Start" as start
+usecase "Propose" as propose
+usecase "Restart" as restart
+player --> start
+player --> propose
+player --> restart
+@enduml

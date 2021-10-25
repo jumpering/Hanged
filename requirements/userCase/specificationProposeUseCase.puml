@@ -1,0 +1,33 @@
+@startuml
+title Specification Propose use case
+skinparam NoteBackgroundColor white
+hide empty description
+state userRequiresCompareWord as " "
+state compareWord as " "
+state ifValidPropose <<choice>>
+
+IN_GAME -[#green]-> userRequiresCompareWord
+note on link #white
+  <b>Player provide
+  proposed characters
+end note
+userRequiresCompareWord -[#green]-> compareWord
+note on link #white
+  <b>System requires
+  player characters input
+  <b>System allows
+  [only characters]
+end note
+compareWord -[#green]-> ifValidPropose
+note on link #white
+  [valid characters]
+end note
+ifValidPropose --> compareWord
+note on link #white
+  [invalid characters]
+end note
+ifValidPropose -[#green]-> OUT_GAME
+note on link #white
+  [finished]
+end note
+@enduml

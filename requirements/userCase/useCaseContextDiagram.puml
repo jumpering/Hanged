@@ -1,0 +1,22 @@
+@startuml
+'https://plantuml.com/state-diagram
+
+state INIT
+state IN_GAME
+state OUT_GAME
+state EXIT
+state IfIn_Game <<choice>>
+state IfOut_Game <<choice>>
+
+  [*] --> INIT
+  INIT --> IN_GAME : Start
+  IN_GAME --> IfIn_Game : Propose
+  IfIn_Game --> IN_GAME
+  IfIn_Game --> OUT_GAME : [finished]
+  OUT_GAME --> IfOut_Game : Restart
+  IfOut_Game --> INIT : [yes]
+  IfOut_Game --> EXIT : [no]
+  EXIT --> [*]
+
+}
+@enduml
