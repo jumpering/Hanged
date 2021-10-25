@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="804px" preserveAspectRatio="none" style="width:364px;height:804px;background:#FFFFFF;" version="1.1" viewBox="0 0 364 804" width="364px" zoomAndPan="magnify"><defs><filter height="300%" id="ftgozi9mgvwtr" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><text fill="#000000" font-family="sans-serif" font-size="18" lengthAdjust="spacing" textLength="222" x="63.5" y="18.6855">Specification Start use case</text><rect fill="#FEFECE" filter="url(#ftgozi9mgvwtr)" height="40" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="50" x="87" y="109.6406"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="24" x="100" y="135.3691">INIT</text><rect fill="#FEFECE" filter="url(#ftgozi9mgvwtr)" height="40" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="50" x="87" y="265.6406"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="114" y="291.3691"/><rect fill="#FEFECE" filter="url(#ftgozi9mgvwtr)" height="40" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="50" x="7" y="454.6406"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="34" y="480.3691"/><polygon fill="#FEFECE" filter="url(#ftgozi9mgvwtr)" points="112,610.6406,124,622.6406,112,634.6406,100,622.6406,112,610.6406" style="stroke:#A80036;stroke-width:1.5;"/><ellipse cx="112" cy="38.6406" fill="#000000" filter="url(#ftgozi9mgvwtr)" rx="10" ry="10" style="stroke:none;stroke-width:1.0;"/><rect fill="#FEFECE" filter="url(#ftgozi9mgvwtr)" height="40" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="70" x="77" y="750.6406"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="60" x="82" y="776.3691">IN_GAME</text><!--MD5=[de337d60c65d7a69d09434d7c5e39230]
+link *start to INIT--><path d="M112,48.8306 C112,61.8206 112,86.0206 112,104.3706 " fill="none" id="*start-to-INIT" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="112,109.3806,116,100.3806,112,104.3806,108,100.3806,112,109.3806" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[4e6cf5cedc5023d3f74dd5ee7b81efd8]
+link INIT to startedGame--><path d="M112,149.8306 C112,177.7306 112,229.4806 112,260.1106 " fill="none" id="INIT-to-startedGame" style="stroke:#008000;stroke-width:1.0;"/><polygon fill="#008000" points="112,265.2106,116,256.2106,112,260.2106,108,256.2106,112,265.2106" style="stroke:#008000;stroke-width:1.0;"/><path d="M117,184.6406 L117,226.6406 L246,226.6406 L246,194.6406 L236,184.6406 L117,184.6406 " fill="#FFFFFF" filter="url(#ftgozi9mgvwtr)" style="stroke:#008000;stroke-width:1.0;"/><path d="M236,184.6406 L236,194.6406 L246,194.6406 L236,184.6406 " fill="#FFFFFF" style="stroke:#008000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="108" x="123" y="203.1357">Player request to</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="100" x="123" y="219.4873">start a new game</text><!--MD5=[309308812ad6d760a963826f8ffb2c84]
+link startedGame to numberOfPlayers--><path d="M86.7,293.9606 C67.1,301.1206 41.28,314.1306 29,335.6406 C8.78,371.0506 16.77,420.3606 24.39,449.4406 " fill="none" id="startedGame-to-numberOfPlayers" style="stroke:#008000;stroke-width:1.0;"/><polygon fill="#008000" points="25.71,454.2806,27.2059,444.546,24.3968,449.4561,19.4867,446.6471,25.71,454.2806" style="stroke:#008000;stroke-width:1.0;"/><path d="M34,340.6406 L34,415.6406 L158,415.6406 L158,350.6406 L148,340.6406 L34,340.6406 " fill="#FFFFFF" filter="url(#ftgozi9mgvwtr)" style="stroke:#008000;stroke-width:1.0;"/><path d="M148,340.6406 L148,350.6406 L158,350.6406 L148,340.6406 " fill="#FFFFFF" style="stroke:#008000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="102" x="40" y="359.1357">System requires</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="103" x="40" y="375.4873">number of players</text><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="91" x="40" y="391.8389">System allows</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="86" x="40" y="408.1904">[only numbers]</text><!--MD5=[a499375af50ad874e0609854c08c9b9e]
+link numberOfPlayers to ifValidNumberOfPlayers--><path d="M25.56,494.7106 C19.25,517.0906 12.73,554.4606 29,580.6406 C43.96,604.7206 77.72,615.0806 97.26,619.2006 " fill="none" id="numberOfPlayers-to-ifValidNumberOfPlayers" style="stroke:#008000;stroke-width:1.0;"/><polygon fill="#008000" points="102.37,620.2006,94.3007,614.5538,97.4622,619.2447,92.7713,622.4063,102.37,620.2006" style="stroke:#008000;stroke-width:1.0;"/><path d="M34,529.6406 L34,571.6406 L158,571.6406 L158,539.6406 L148,529.6406 L34,529.6406 " fill="#FFFFFF" filter="url(#ftgozi9mgvwtr)" style="stroke:#008000;stroke-width:1.0;"/><path d="M148,529.6406 L148,539.6406 L158,539.6406 L148,529.6406 " fill="#FFFFFF" style="stroke:#008000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="99" x="40" y="548.1357">Player provides</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="103" x="40" y="564.4873">number of players</text><!--MD5=[62cda2a3a26b89bf471ca66bc9c6aeaa]
+link ifValidNumberOfPlayers to startedGame--><path d="M120.41,618.7306 C133.98,613.5306 160.25,601.2006 171,580.6406 C221.45,484.1406 217.27,434.2106 171,335.6406 C164.75,322.3306 152.91,311.3806 141.47,303.2406 " fill="none" id="ifValidNumberOfPlayers-to-startedGame" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="137.29,300.3706,142.4538,308.7572,141.4148,303.1966,146.9754,302.1576,137.29,300.3706" style="stroke:#A80036;stroke-width:1.0;"/><path d="M212,459.6406 L212,485.6406 L355,485.6406 L355,469.6406 L345,459.6406 L212,459.6406 " fill="#FFFFFF" filter="url(#ftgozi9mgvwtr)" style="stroke:#A80036;stroke-width:1.0;"/><path d="M345,459.6406 L345,469.6406 L355,469.6406 L345,459.6406 " fill="#FFFFFF" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="122" x="218" y="478.1357">[invalid input number]</text><!--MD5=[9685cde1ba61945418ebf65f40791fac]
+link ifValidNumberOfPlayers to IN_GAME--><path d="M112,635.1006 C112,658.7406 112,713.3706 112,745.2706 " fill="none" id="ifValidNumberOfPlayers-to-IN_GAME" style="stroke:#008000;stroke-width:1.0;"/><polygon fill="#008000" points="112,750.5706,116,741.5706,112,745.5706,108,741.5706,112,750.5706" style="stroke:#008000;stroke-width:1.0;"/><path d="M117,669.6406 L117,711.6406 L229,711.6406 L229,679.6406 L219,669.6406 L117,669.6406 " fill="#FFFFFF" filter="url(#ftgozi9mgvwtr)" style="stroke:#008000;stroke-width:1.0;"/><path d="M219,669.6406 L219,679.6406 L229,679.6406 L219,669.6406 " fill="#FFFFFF" style="stroke:#008000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="91" x="123" y="688.1357">System allows</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="62" x="123" y="704.4873">start game</text><!--MD5=[de1de00011df2415e30f8cf943a71148]
+@startuml
+
+title Specification Start use case
+skinparam NoteBackgroundColor white
+hide empty description
+state INIT as "INIT"
+state startedGame as " "
+state numberOfPlayers as " "
+state ifValidNumberOfPlayers <<choice>>
+
+[*] - -> INIT
+INIT -[#green]-> startedGame
+note on link #white
+  <b>Player request to
+  start a new game
+end note
+startedGame -[#green]-> numberOfPlayers
+note on link
+  <b>System requires
+  number of players
+  <b>System allows
+  [only numbers]
+end note
+numberOfPlayers -[#green]-> ifValidNumberOfPlayers
+note on link
+  <b>Player provides
+  number of players
+end note
+ifValidNumberOfPlayers - -> startedGame
+note on link
+  [invalid input number]
+end note
+ifValidNumberOfPlayers -[#green]-> IN_GAME
+note on link
+  <b>System allows
+  start game
+end note
+
+
+
+@enduml
+
+PlantUML version 1.2021.11(Sat Oct 02 15:26:11 CEST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: Cp1252
+Language: es
+Country: ES
+--></g></svg>

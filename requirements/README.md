@@ -7,6 +7,9 @@
 # Context Diagram
 ![CONTEXTDIAGRAM](./images/useCaseContextDiagram.svg)
 
+# Specification Start use case
+![START](./images/specificationStartUseCase-Specification_Start_use_case.svg)
+
 # MVC (wip)
 ![MVC](./images/MVC.svg)
 
