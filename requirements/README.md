@@ -4,6 +4,9 @@
 #Actors
 ![ACTORS](./images/actorDiagram.svg)
 
+#Context Diagram
+![CONTEXTDIAGRAM](./images/useCaseContextDiagram.svg)
+
 # MVC (wip)
 ![MVC](./images/MVC.svg)
 
