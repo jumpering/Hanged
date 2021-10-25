@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="180px" preserveAspectRatio="none" style="width:216px;height:180px;background:#FFFFFF;" version="1.1" viewBox="0 0 216 180" width="216px" zoomAndPan="magnify"><defs><filter height="300%" id="f1p2kblturfb2c" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[d8eca564858595245321772129d300af]
+entity player--><ellipse cx="26" cy="55.5" fill="#FEFECE" filter="url(#f1p2kblturfb2c)" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><path d="M26,63.5 L26,90.5 M13,71.5 L39,71.5 M26,90.5 L13,105.5 M26,90.5 L39,105.5 " fill="none" filter="url(#f1p2kblturfb2c)" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="40" x="6" y="125.5332">Player</text><ellipse cx="155.1985" cy="21.4517" fill="#FEFECE" filter="url(#f1p2kblturfb2c)" rx="32.6985" ry="15.4517" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="30" x="140.1985" y="25.1802">Start</text><ellipse cx="155.0928" cy="87.4872" fill="#FEFECE" filter="url(#f1p2kblturfb2c)" rx="49.0928" ry="15.4872" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="53" x="126.1382" y="91.8807">Propose</text><ellipse cx="155.0247" cy="153.4555" fill="#FEFECE" filter="url(#f1p2kblturfb2c)" rx="44.0247" ry="15.4555" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="46" x="131.3075" y="157.4018">Restart</text><!--MD5=[64e70d79db25e8ae051f313485646b2f]
+link player to start--><path d="M46.01,77.62 C67.68,66.36 103.23,47.88 127.59,35.23 " fill="none" id="player-to-start" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="132.3,32.78,122.4686,33.3654,127.8597,35.0787,126.1464,40.4698,132.3,32.78" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[350dfe9a8010bf61e192c7e919e7c565]
+link player to propose--><path d="M46.01,87.5 C60.43,87.5 81.01,87.5 100.33,87.5 " fill="none" id="player-to-propose" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="105.75,87.5,96.75,83.5,100.75,87.5,96.75,91.5,105.75,87.5" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[b6d8396160b261cafb53a36112d6b35c]
+link player to restart--><path d="M46.01,97.38 C66.9,108.24 100.7,125.8 124.92,138.39 " fill="none" id="player-to-restart" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="129.63,140.83,123.4865,133.1321,125.1927,138.5255,119.7993,140.2317,129.63,140.83" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[2e515aaebae38f10665ee24356d4d13e]
+@startuml
+'https://plantuml.com/use-case-diagram
+
+left to right direction
+actor Player as player
+usecase "Start" as start
+usecase "Propose" as propose
+usecase "Restart" as restart
+player - -> start
+player - -> propose
+player - -> restart
+@enduml
+
+@startuml
+
+left to right direction
+actor Player as player
+usecase "Start" as start
+usecase "Propose" as propose
+usecase "Restart" as restart
+player - -> start
+player - -> propose
+player - -> restart
+@enduml
+
+PlantUML version 1.2021.11(Sat Oct 02 15:26:11 CEST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: Cp1252
+Language: es
+Country: ES
+--></g></svg>
