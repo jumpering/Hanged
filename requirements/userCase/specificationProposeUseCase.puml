@@ -32,7 +32,7 @@ note on link #white
 end note
 note on link #white
   <b>System shows
-  invalid input propose
+  invalid player provide propose
 end note
 showBoard -[#green]-> ifEndGame
 ifEndGame -up-> IN_GAME : [game not end]
