@@ -16,8 +16,10 @@ note on link #white
 end note
 startedGame -[#green]-> numberOfPlayers
 note on link
+  <b>System shows
+  title required number of players
   <b>System requires
-  number of players
+  input number of players
   <b>System allows
   [only numbers]
 end note
@@ -28,12 +30,16 @@ note on link
 end note
 ifValidNumberOfPlayers --> startedGame
 note on link
-  [invalid input number]
+  <b>System shows
+  invalid numer of players
 end note
 ifValidNumberOfPlayers -[#green]-> IN_GAME
 note on link
+  <b>System shows
+  board
   <b>System allows
   start game
+  player propose combination
 end note
 
 

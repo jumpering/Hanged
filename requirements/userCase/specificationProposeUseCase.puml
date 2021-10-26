@@ -11,22 +11,24 @@ note on link #white
   <b>Player provide
   proposed characters
 end note
-userRequiresCompareWord -[#green]-> compareWord
+userRequiresCompareWord -[#green]-> ifValidPropose
 note on link #white
   <b>System requires
   player characters input
   <b>System allows
   [only characters]
 end note
-compareWord -[#green]-> ifValidPropose
+ifValidPropose -[#green]-> compareWord
 note on link #white
-  [valid characters]
+  <b>System shows
+ board
 end note
-ifValidPropose --> compareWord
+compareWord --> ifValidPropose
 note on link #white
-  [invalid characters]
+  <b>System shows
+  invalid propose input
 end note
-ifValidPropose -[#green]-> OUT_GAME
+compareWord -[#green]-> OUT_GAME
 note on link #white
   [finished]
 end note

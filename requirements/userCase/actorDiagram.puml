@@ -6,7 +6,10 @@ actor Player as player
 usecase "Start" as start
 usecase "Propose" as propose
 usecase "Restart" as restart
+usecase "showBoard" as showBoard
 player --> start
+start ..> showBoard :include
 player --> propose
+propose ..> showBoard :include
 player --> restart
 @enduml
