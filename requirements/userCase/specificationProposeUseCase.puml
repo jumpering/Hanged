@@ -3,8 +3,9 @@ title Specification Propose use case
 skinparam NoteBackgroundColor white
 hide empty description
 state userRequiresCompareWord as " "
-state compareWord as " "
+state showBoard as "Show Board"
 state ifValidPropose <<choice>>
+state ifEndGame <<choice>>
 
 IN_GAME -[#green]-> userRequiresCompareWord
 note on link #white
@@ -14,22 +15,29 @@ end note
 userRequiresCompareWord -[#green]-> ifValidPropose
 note on link #white
   <b>System requires
-  player characters input
+  player characters
   <b>System allows
   [only characters]
 end note
-ifValidPropose -[#green]-> compareWord
+ifValidPropose -[#green]-> showBoard : [valid input propose]
+note on link
+  <b>System shows
+  board
+  end note
+ifValidPropose -up-> IN_GAME
 note on link #white
   <b>System shows
  board
 end note
-compareWord --> ifValidPropose
 note on link #white
   <b>System shows
-  invalid propose input
+  invalid input propose
 end note
-compareWord -[#green]-> OUT_GAME
+showBoard -[#green]-> ifEndGame
+ifEndGame -up-> IN_GAME : [not end]
+ifEndGame -[#green]-> OUT_GAME
 note on link #white
-  [finished]
+  [finished game]
+  [lose or win?]
 end note
 @enduml
