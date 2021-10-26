@@ -20,5 +20,5 @@
 # Initial State of Object Diagram (wip)
 ![initialState](./images/InitalState.svg)
 
-# Console GUI v1 (user case)
-[user case](userCase/consoleInterfaceUseCase.txt)
+# Console GUI
+[GUI prototype](userCase/consoleInterfaceUseCase.txt)
