@@ -17,7 +17,8 @@ note on link #white
   <b>System requires
   player characters
   <b>System allows
-  [only characters]
+  - only characters
+  - length > 0
 end note
 ifValidPropose -[#green]-> showBoard : [valid input propose]
 note on link
@@ -34,10 +35,9 @@ note on link #white
   invalid input propose
 end note
 showBoard -[#green]-> ifEndGame
-ifEndGame -up-> IN_GAME : [not end]
+ifEndGame -up-> IN_GAME : [game not end]
 ifEndGame -[#green]-> OUT_GAME
 note on link #white
-  [finished game]
-  [lose or win?]
+  [lose or win]
 end note
 @enduml
