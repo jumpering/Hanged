@@ -7,11 +7,12 @@
 # Context Diagram
 ![CONTEXTDIAGRAM](./images/useCaseContextDiagram.svg)
 
-# Specification Start use case
+# Specifications use case
 ![START](./images/specificationStartUseCase-Specification_Start_use_case.svg)
 
-# Specification Propose use case
 ![PROPOSE](./images/specificationProposeUseCase-Specification_Propose_use_case.svg)
+
+![RESTART](./images/specificationRestartUseCase-Restart.svg)
 
 # MVC (wip)
 ![MVC](./images/MVC.svg)

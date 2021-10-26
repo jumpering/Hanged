@@ -1,5 +1,5 @@
 @startuml
-title Specification Propose use case
+title Propose
 skinparam NoteBackgroundColor white
 hide empty description
 state userRequiresCompareWord as " "
@@ -36,8 +36,9 @@ note on link #white
 end note
 showBoard -[#green]-> ifEndGame
 ifEndGame -up-> IN_GAME : [game not end]
-ifEndGame -[#green]-> OUT_GAME
+ifEndGame -[#green]-> OUT_GAME : [lose or win]
 note on link #white
-  [lose or win]
+  <b> System shows
+  restart title
 end note
 @enduml
