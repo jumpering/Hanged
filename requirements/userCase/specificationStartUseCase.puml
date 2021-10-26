@@ -7,6 +7,7 @@ state INIT as "INIT"
 state startedGame as " "
 state numberOfPlayers as " "
 state ifValidNumberOfPlayers <<choice>>
+state showBoard as "Show Board"
 
 [*] --> INIT
 INIT -[#green]-> startedGame
@@ -19,7 +20,7 @@ note on link
   <b>System shows
   title required number of players
   <b>System requires
-  input number of players
+  number of players
   <b>System allows
   [only numbers]
 end note
@@ -33,15 +34,17 @@ note on link
   <b>System shows
   invalid numer of players
 end note
-ifValidNumberOfPlayers -[#green]-> IN_GAME
+ifValidNumberOfPlayers -[#green]-> showBoard
 note on link
   <b>System shows
   board
+end note
+showBoard -[#green]-> IN_GAME
+note on link
   <b>System allows
   start game
+  <b>System requires
   player propose combination
 end note
-
-
 
 @enduml
