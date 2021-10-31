@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="225px" preserveAspectRatio="none" style="width:242px;height:225px;background:#FFFFFF;" version="1.1" viewBox="0 0 242 225" width="242px" zoomAndPan="magnify"><defs><filter height="300%" id="flwj9a8zo8ku5" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[e2a75efa8a0f57c2afae8bf75386f79c]
+cluster views--><polygon fill="#FFFFFF" filter="url(#flwj9a8zo8ku5)" points="16,6,63,6,70,29.6094,225,29.6094,225,218,16,218,16,6" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="16" x2="70" y1="29.6094" y2="29.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="41" x="20" y="22.5332">views</text><!--MD5=[35f1353b343fce91498855834c1892bb]
+entity StartView--><path d="M41.5,46 L41.5,70 M41.5,58 L58.5,58 " fill="none" filter="url(#flwj9a8zo8ku5)" style="stroke:#A80036;stroke-width:1.5;"/><ellipse cx="70.5" cy="58" fill="#FEFECE" filter="url(#flwj9a8zo8ku5)" rx="12" ry="12" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="59" x="32.5" y="88.5332">StartView</text><!--MD5=[caadedad0805db8fae1c17bae2ebb846]
+entity ProposeView--><path d="M147.5,46 L147.5,70 M147.5,58 L164.5,58 " fill="none" filter="url(#flwj9a8zo8ku5)" style="stroke:#A80036;stroke-width:1.5;"/><ellipse cx="176.5" cy="58" fill="#FEFECE" filter="url(#flwj9a8zo8ku5)" rx="12" ry="12" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="82" x="127" y="88.5332">ProposeView</text><!--MD5=[ac7a47ecbb8bb8ae3bac73051d292bf5]
+entity RestartView--><path d="M49.5,156 L49.5,180 M49.5,168 L66.5,168 " fill="none" filter="url(#flwj9a8zo8ku5)" style="stroke:#A80036;stroke-width:1.5;"/><ellipse cx="78.5" cy="168" fill="#FEFECE" filter="url(#flwj9a8zo8ku5)" rx="12" ry="12" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="75" x="32.5" y="198.5332">RestartView</text><!--MD5=[50a0c96223e4c218d4bcf0572fbf3eb6]
+link StartView to ProposeView--><!--MD5=[ddcebec861afbd4d22aaeb05cc01c975]
+link StartView to RestartView--><!--MD5=[e55c95614efa9cf0128c4870d7743e9c]
+@startuml
+package views{
+boundary StartView
+boundary ProposeView
+boundary RestartView
+}
+@enduml
+
+PlantUML version 1.2021.11(Sat Oct 02 15:26:11 CEST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: Cp1252
+Language: es
+Country: ES
+--></g></svg>

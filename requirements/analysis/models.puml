@@ -3,5 +3,6 @@ package models{
 entity SecretWord
 interface WordBD
 entity Player
+entity Turn
 }
 @enduml
