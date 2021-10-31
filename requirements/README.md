@@ -12,7 +12,7 @@
 ![START](./images/specificationStartUseCase.svg)
 # Propose
 ![PROPOSE](./images/specificationProposeUseCase.svg)
-#Restart
+# Restart
 ![RESTART](./images/specificationRestartUseCase.svg)
 
 # MVC (wip)
