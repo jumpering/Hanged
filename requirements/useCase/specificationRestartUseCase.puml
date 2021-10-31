@@ -1,5 +1,4 @@
 @startuml
-title Restart
 skinparam NoteBackgroundColor white
 hide empty description
 state OUT_GAME

@@ -1,6 +1,4 @@
 @startuml
-
-title Start
 skinparam NoteBackgroundColor white
 hide empty description
 state INIT as "INIT"

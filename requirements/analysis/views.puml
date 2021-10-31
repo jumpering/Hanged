@@ -1,0 +1,7 @@
+@startuml
+package views{
+boundary StartView
+boundary ProposeView
+boundary RestartView
+}
+@enduml

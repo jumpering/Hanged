@@ -1,0 +1,7 @@
+@startuml
+package models{
+entity SecretWord
+interface WordBD
+entity Player
+}
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+package controllers{
+control StartController
+control ProposeController
+control RestartController
+}
+@enduml

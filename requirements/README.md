@@ -8,11 +8,12 @@
 ![CONTEXTDIAGRAM](./images/useCaseContextDiagram.svg)
 
 # Specifications use case
-![START](./images/specificationStartUseCase-Specification_Start_use_case.svg)
-
-![PROPOSE](./images/specificationProposeUseCase-Specification_Propose_use_case.svg)
-
-![RESTART](./images/specificationRestartUseCase-Restart.svg)
+# Start
+![START](./images/specificationStartUseCase.svg)
+# Propose
+![PROPOSE](./images/specificationProposeUseCase.svg)
+#Restart
+![RESTART](./images/specificationRestartUseCase.svg)
 
 # MVC (wip)
 ![MVC](./images/MVC.svg)
@@ -21,4 +22,4 @@
 ![initialState](./images/InitalState.svg)
 
 # Console GUI
-[GUI prototype](userCase/consoleInterfaceUseCase.txt)
+[GUI prototype](useCase/consoleInterfaceUseCase.txt)
