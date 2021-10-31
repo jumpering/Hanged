@@ -19,7 +19,7 @@
 
 # MVC (wip)
 ![MVC](./images/MVC.svg)
-# Architecture RUP
+# Analysis Architecture RUP
 ![VIEWS](./analysis/views.svg)
 ![CONTROLLERS](./analysis/controllers.svg)
 ![MODELS](./analysis/models.svg)
